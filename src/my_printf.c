@@ -69,7 +69,7 @@ bool (*check[])(const string query, int i) = {
    pointerCheck,
    shortCheck,
    hexadecimalCheck
-} ;
+};
 
 void integerPrint();
 void longPrint();
@@ -87,13 +87,14 @@ void (*print[])(var_list ap, char* opt) = {
    pointerPrint,
    shortPrint,
    hexadecimalPrint
-} ;
+};
 
 /* Usable functions */
 
 void        my_printf(const string query, ...) {
     int     i,
-            j;
+            j
+            opt[5];
     size_t  querySize;
     va_list ap;
 
@@ -111,7 +112,7 @@ void        my_printf(const string query, ...) {
 
           // Process
           j = 0;
-          while (j < PROCESS_NOMBER) {
+          while (j < PROCESS_NUMBER) {
              if ((*check[j])(query, j))
                 (*print[j])(ap, opt);
              ++j;
