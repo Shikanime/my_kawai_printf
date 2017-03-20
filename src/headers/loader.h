@@ -6,7 +6,7 @@
 // Variable definitions
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
-#define VOID ;
+#define EXIT_NEUTRE
 
 // Type definitions
 typedef enum {
