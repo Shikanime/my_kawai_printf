@@ -1,9 +1,9 @@
 #include "headers/loader.h"
 #define PROCESS_NUMBER 7
 
-// /!\ DEV /!\ NEED TO BE SEPARATE
-size_t		str_length(string s)
-{
+/* Local helpers */
+
+size_t		stringLengthHelper(string s){
   string	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
@@ -11,49 +11,45 @@ size_t		str_length(string s)
   return bfs - s;
 }
 
-void	chr_print(const char c)
-{
+void	charPrintHelper(const char c){
   write(1, &c, 1);
 }
 
-bool		str_print(const string s)
-{
+void      stringPrintHelper(const string s){
   string	bfs;
 
-  for (bfs = s; *bfs != '\0'; ++bfs)
-    chr_print(*bfs);
+  bfs = s;
+  while (*bfs != '\0'){
+    charPrintHelper(*bfs);
+    ++bfs;
+  }
 }
 
-void	nbr_print(int n)
-{
+void  integerPrintHelper(int n){
   int	b;
 
   if (n == -2147483647) {
-    str_print("-2147483647");
+    stringPrintHelper("-2147483647");
     return VOID;
   }
-  
   if (n < 0) {
-    chr_print('-');
+    charPrintHelper('-');
     n *= -1;
   }
-  
   if (n < 10) {
-    chr_print(n + 48);
+    charPrintHelper(n + 48);
     return VOID;
   }
-
-  for (b = 1; b <= (n / 10); b *= 10);
-  
+  b = 1;
+  while (b <= (n / 10)){
+    b *= 10;
+  } 
   while (b >= 1) {
-    chr_print(n / b + '0');
+    charPrintHelper(n / b + '0');
     n %= b;
     b /= 10;
   }
 }
-// /!\ DEV /!\ NEED TO BE SEPARATE - END
-
-// FUNCTIONNAL CODE
 
 /* Internal prototype */
 
@@ -101,7 +97,7 @@ void        my_printf(const string query, ...) {
     size_t  querySize;
     va_list ap;
 
-    querySize = str_length(query);
+    querySize = stringLengthHelper(query);
 
     va_start(ap, query);
 
@@ -109,9 +105,14 @@ void        my_printf(const string query, ...) {
     while (i < querySize) {
         if (query[i] == '%') {
           ++i;
+
+          // Options
+          // TODO
+
+          // Process
           j = 0;
-          while(j < PROCESS_NOMBER) {
-             if((*check[j])(query, j))
+          while (j < PROCESS_NOMBER) {
+             if ((*check[j])(query, j))
                 (*print[j])(ap, opt);
              ++j;
           }
@@ -165,27 +166,25 @@ bool hexadecimalCheck(const string query, int n){
 
 // Printer
 void integerPrint(var_list ap, char* opt){
-  nbr_print(var_arg(ap, int));
+  integerPrintHelper(var_arg(ap, int));
 }
 
-void integerPrint(var_list ap, char* opt){
+void longPrint(var_list ap, char* opt){
 }
 
 void charPrint(var_list ap, char* opt){
+  charPrintHelper(var_arg(ap, char));
 }
 
 void stringPrint(var_list ap, char* opt){
-
+  stringPrintHelper(var_arg(ap, string));
 }
 
 void pointerPrint(var_list ap, char* opt){
-
 }
 
 void shortPrint(var_list ap, char* opt){
-
 }
 
 void hexadecimalPrint(var_list ap, char* opt){
-
 }
