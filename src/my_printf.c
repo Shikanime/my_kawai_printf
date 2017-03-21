@@ -6,8 +6,8 @@
 void                my_printf(const string query, ...) {
     unsigned int    i;
     int             j;
-    char             opt[5];
-    size_t          querySize;
+    long int        querySize;
+    char            opt[5];
     va_list         ap;
 
     querySize = stringLengthHelper(query);
