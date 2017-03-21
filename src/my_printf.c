@@ -24,7 +24,7 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-             if((*check[j])(ap, query, positionQuery) == 1){
+             if((*check[j])(&ap, query, positionQuery) == 1){
                  positionQuery = 7;
              }
              ++j;
