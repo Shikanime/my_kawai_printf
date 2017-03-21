@@ -1,8 +1,6 @@
 #ifndef MY_PRINTF_RULLES_CHECK_H
 #define MY_PRINTF_RULLES_CHECK_H
 
-#include "app.helper.h"
-
 extern int integerCheck        (const char * query, int n);
 extern int longCheck           (const char * query, int n);
 extern int charCheck           (const char * query, int n);

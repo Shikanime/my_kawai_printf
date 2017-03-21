@@ -1,6 +1,8 @@
+#include "loader.h"
+
 /* Usable functions */
 
-void	charPrintHelper(char c){
+void  charPrintHelper(char c){
   write(1, &c, 1);
 }
 
