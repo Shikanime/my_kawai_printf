@@ -25,7 +25,6 @@ endif
 _SRCS := app/rules/check.c \
 	app/rules/option.c \
 	app/rules/print.c \
-	app/process.c \
 	app/my_printf.c \
 	main.c
 
