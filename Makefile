@@ -22,11 +22,11 @@ endif
  
 # (12): typical way to list files and build full paths
 # (4): list the sources, not the object files (nor includes)
-_SRCS := app/rules/rules.check.c \
-	app/rules/rules.option.c \
-	app/rules/rules.print.c \
-	app/app.process.c \
-	app/app.my_printf.c \
+_SRCS := app/rules/check.c \
+	app/rules/option.c \
+	app/rules/print.c \
+	app/process.c \
+	app/my_printf.c \
 	main.c
 
 SRCS := $(patsubst %,$(SRCDIR)/%,$(_SRCS))
