@@ -9,7 +9,7 @@ extern int pointerCheck        (const char * query, int n);
 extern int shortCheck          (const char * query, int n);
 extern int hexadecimalCheck    (const char * query, int n);
 
-extern int (*check[])(const char * query, int i) = {
+int (*check[])(const char * query, int i) = {
    integerCheck,
    longCheck,
    stringCheck,

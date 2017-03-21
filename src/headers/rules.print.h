@@ -9,7 +9,7 @@ extern void pointerPrint       (va_list ap, char * opt);
 extern void shortPrint         (va_list ap, char * opt);
 extern void hexadecimalPrint   (va_list ap, char * opt);
 
-extern void (*print[])(va_list ap, char * opt) = {
+void (*print[])(va_list ap, char * opt) = {
    integerPrint,
    longPrint,
    stringPrint,
