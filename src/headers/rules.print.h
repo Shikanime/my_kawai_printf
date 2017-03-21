@@ -19,4 +19,6 @@ void (*print[])(va_list ap, char* opt) = {
    hexadecimalPrint
 };
 
+#include "app.helper.h"
+
 #endif //MY_PRINTF_RULLES_PRINT

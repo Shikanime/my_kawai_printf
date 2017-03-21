@@ -19,4 +19,6 @@ extern bool (*check[])(const string query, int i) = {
    hexadecimalCheck
 };
 
+#include "app.helper.h"
+
 #endif //MY_PRINTF_RULLES_CHECK
