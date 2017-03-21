@@ -22,7 +22,7 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-             if (type = (*check[j])(query, positionQuery) == 1){
+             if ((*check[j])(query, positionQuery) == 1){
                  (*print[j])(&ap, opt);
              }
              ++j;
