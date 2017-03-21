@@ -44,7 +44,7 @@ void  integerPrintHelper(int n){
     b *= 10;
   } 
   while (b >= 1) {
-    charPrintHelper((char) (n / b + '0');
+    charPrintHelper((char) (n / b + '0'));
     n %= b;
     b /= 10;
   }
