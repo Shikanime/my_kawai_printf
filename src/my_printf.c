@@ -3,36 +3,36 @@
 /* Usable functions */
 
 void                my_printf(char * query, ...) {
-    unsigned int    queryPosition;
+    unsigned int    positionQuery;
     int             j;
-    long int        querySize;
+    long int        sizeQuery;
     int             opt[5];
     va_list         ap;
 
-    querySize = stringLengthHelper(query);
+    sizeQuery = stringLengthHelper(query);
 
     va_start(ap, query);
 
-    queryPosition = 0;
-    while (queryPosition < querySize) {
-        if (query[queryPosition] == '%') {
-          ++queryPosition;
+    positionQuery = 0;
+    while (positionQuery < sizeQuery) {
+        if (query[positionQuery] == '%' && query[positionQuery + 1] != '\0') {
+          ++positionQuery;
 
           // Options
           // TODO
-
+stringPrintHelper("ici");
           // Process
           j = 0;
           while (j < 7) {
-             if ((*check[j])(query, queryPosition) == 1){
+             if ((*check[j])(query, positionQuery) == 1){
                  (*print[j])(ap, opt);
              }
              ++j;
           }
         } else {
-            charPrintHelper(query[queryPosition]);
+            charPrintHelper(query[positionQuery]);
         }
-        ++queryPosition;
+        ++positionQuery;
     }
     charPrintHelper('\n');
 
