@@ -3,23 +3,15 @@
 
 #include "app.helper.h"
 
-// Type definitions
-typedef enum {
-    false,
-    true
-} bool;
+void integerPrint       (va_list ap, char * opt);
+void longPrint          (va_list ap, char * opt);
+void charPrint          (va_list ap, char * opt);
+void stringPrint        (va_list ap, char * opt);
+void pointerPrint       (va_list ap, char * opt);
+void shortPrint         (va_list ap, char * opt);
+void hexadecimalPrint   (va_list ap, char * opt);
 
-typedef char * string;
-
-void integerPrint       (va_list ap, string opt);
-void longPrint          (va_list ap, string opt);
-void charPrint          (va_list ap, string opt);
-void stringPrint        (va_list ap, string opt);
-void pointerPrint       (va_list ap, string opt);
-void shortPrint         (va_list ap, string opt);
-void hexadecimalPrint   (va_list ap, string opt);
-
-void (*print[])(va_list ap, string opt) = {
+void (*print[])(va_list ap, char * opt) = {
    integerPrint,
    longPrint,
    stringPrint,

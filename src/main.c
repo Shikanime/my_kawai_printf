@@ -13,5 +13,5 @@ int main(int ac, string*av) {
     
     my_printf("Integer: %d \n Long: %ld \n Char: %c", integerTest, longTest, stringTest);
     */
-    return EXIT_SUCCESS;
+    return 0;;
 }

@@ -3,23 +3,15 @@
 
 #include "app.helper.h"
 
-// Type definitions
-typedef enum {
-    false,
-    true
-} bool;
+extern int integerCheck        (const char * query, int n);
+extern int longCheck           (const char * query, int n);
+extern int charCheck           (const char * query, int n);
+extern int stringCheck         (const char * query, int n);
+extern int pointerCheck        (const char * query, int n);
+extern int shortCheck          (const char * query, int n);
+extern int hexadecimalCheck    (const char * query, int n);
 
-typedef char * string;
-
-extern bool integerCheck        (const string query, int n);
-extern bool longCheck           (const string query, int n);
-extern bool charCheck           (const string query, int n);
-extern bool stringCheck         (const string query, int n);
-extern bool pointerCheck        (const string query, int n);
-extern bool shortCheck          (const string query, int n);
-extern bool hexadecimalCheck    (const string query, int n);
-
-extern bool (*check[])(const string query, int i) = {
+extern int (*check[])(const char * query, int i) = {
    integerCheck,
    longCheck,
    stringCheck,

@@ -4,7 +4,7 @@ void	charPrintHelper(char c){
   write(1, &c, 1);
 }
 
-long int stringLengthHelper(const string s){
+long int stringLengthHelper(const char * s){
   string	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
@@ -12,7 +12,7 @@ long int stringLengthHelper(const string s){
   return bfs - s;
 }
 
-void      stringPrintHelper(string s){
+void      stringPrintHelper(char * s){
   string	bfs;
 
   bfs = s;
@@ -26,7 +26,7 @@ void  integerPrintHelper(int n){
   int	b;
   if (n == -2147483647) {
     stringPrintHelper((const string) ("-2147483647"));
-    return EXIT_NEUTRE;
+    return;
   }
   if (n < 0) {
     stringPrintHelper('-');
@@ -34,7 +34,7 @@ void  integerPrintHelper(int n){
   }
   if (n < 10) {
     stringPrintHelper((char) (n + 48));
-    return EXIT_NEUTRE;
+    return;
   }
   b = 1;
   while (b <= (n / 10)){
