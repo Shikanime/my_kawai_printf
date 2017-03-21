@@ -9,27 +9,27 @@ OBJDIR := obj
 SRCDIR := src
  
 # (2 & 3) : silent by default
-ifeq ($(VERBOSE),1)
+ifeq ($(VERBOSE), 1)
     SILENCER := 
 else
     SILENCER := @
 endif
  
 #pass this environment variable to the C source
-ifeq ($(DEBUG_BUILD),1)
+ifeq ($(DEBUG_BUILD), 1)
     CFLAGS +=-DDEBUG_BUILD
 endif
  
 # (12): typical way to list files and build full paths
 # (4): list the sources, not the object files (nor includes)
-_SRCS := main.c app/my_printf.c
+_SRCS := main.c my_printf.c
 
-SRCS := $(patsubst %,$(SRCDIR)/%,$(_SRCS))
-OBJS := $(patsubst %,$(OBJDIR)/%,$(_SRCS:c=o))
+SRCS := $(patsubst %, $(SRCDIR)/%, $(_SRCS))
+OBJS := $(patsubst %, $(OBJDIR)/%, $(_SRCS:c=o))
  
 # (5): generate phony deps during compilation
 CFLAGS += -MMD -MP 
-DEPS := $(patsubst %,$(OBJDIR)/%,$(_SRCS:c=d))
+DEPS := $(patsubst %, $(OBJDIR)/%, $(_SRCS:c=d))
 # (10): can't include the deps before the first, default target has appeared!
  
 # (11): "all" is the classical default target
