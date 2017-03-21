@@ -1,5 +1,5 @@
 #include "../../main.h"
-#include "rules.print.h"
+#include "print.h"
 
 /* Local functions */
 

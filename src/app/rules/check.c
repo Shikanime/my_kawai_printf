@@ -1,5 +1,5 @@
 #include "../../main.h"
-#include "rules.check.h"
+#include "check.h"
 
 /* local functions */
 
