@@ -25,7 +25,7 @@ void                my_printf(char * query, ...) {
           j = 0;
           while (j < 7) {
              if ((*check[j])(query, positionQuery) == 1){
-                 (*print[j])(ap, opt);
+                 (*print[j])(&ap, opt);
              }
              ++j;
           }
