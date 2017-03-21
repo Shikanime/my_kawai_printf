@@ -28,7 +28,7 @@ void      stringPrintHelper(string s){
 void  integerPrintHelper(int n){
   int	b;
   if (n == -2147483647) {
-    stringPrintHelper((const string) ("-2147483647");
+    stringPrintHelper((const string) ("-2147483647"));
     return EXIT_NEUTRE;
   }
   if (n < 0) {
@@ -36,7 +36,7 @@ void  integerPrintHelper(int n){
     n *= -1;
   }
   if (n < 10) {
-    charPrintHelper((char) (n + 48);
+    charPrintHelper((char) (n + 48));
     return EXIT_NEUTRE;
   }
   b = 1;
