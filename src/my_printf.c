@@ -1,5 +1,4 @@
 #include "loader.h"
-#define PROCESS_NUMBER 7
 
 /* Usable functions */
 

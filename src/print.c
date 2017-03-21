@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-void (*print[])(va_list ap, int * opt) = {
+void (*print[PROCESS_NUMBER])(va_list ap, int * opt) = {
    integerPrint,
    longPrint,
    stringPrint,

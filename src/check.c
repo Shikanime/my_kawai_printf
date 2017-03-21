@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-int (*check[])(const char * query, int i) = {
+int (*check[PROCESS_NUMBER])(const char * query, int i) = {
    integerCheck,
    longCheck,
    stringCheck,
