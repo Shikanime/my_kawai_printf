@@ -6,7 +6,7 @@ int main(int ac, char * av[]) {
 
     int integerTest;
     long longTest;
-    stringstringTest;
+    char * stringTest;
     
     integerTest = 666;
     longTest = 3000000000;
