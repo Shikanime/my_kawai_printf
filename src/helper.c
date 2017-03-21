@@ -1,5 +1,3 @@
-#include "loader.h"
-
 /* Usable functions */
 
 long int stringLengthHelper(string s){

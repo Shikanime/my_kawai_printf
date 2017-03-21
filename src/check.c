@@ -1,5 +1,3 @@
-#include "loader.h"
-
 /* local functions */
 
 bool integerCheck(const string query, int n){
