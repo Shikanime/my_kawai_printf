@@ -1,16 +1,16 @@
 #include "loader.h"
 
-/* Usable functions */
+// /* Usable functions */
 
-void (*print[7])(va_list * ap, int * opt) = {
-   integerPrint,
-   longPrint,
-   stringPrint,
-   stringPrint,
-   pointerPrint,
-   shortPrint,
-   hexadecimalPrint
-};
+// void (*print[7])(va_list * ap, int * opt) = {
+//    integerPrint,
+//    longPrint,
+//    stringPrint,
+//    stringPrint,
+//    pointerPrint,
+//    shortPrint,
+//    hexadecimalPrint
+// };
 
 /* Local functions */
 
