@@ -35,6 +35,7 @@ void                my_printf(char * query, ...) {
         }
         ++i;
     }
+    charPrintHelper('\n');
 
     va_end(ap);
 }
