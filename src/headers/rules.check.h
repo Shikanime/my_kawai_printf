@@ -3,6 +3,14 @@
 
 #include "app.helper.h"
 
+// Type definitions
+typedef enum {
+    false,
+    true
+} bool;
+
+typedef char * string;
+
 extern bool integerCheck        (const string query, int n);
 extern bool longCheck           (const string query, int n);
 extern bool charCheck           (const string query, int n);

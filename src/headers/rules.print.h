@@ -3,6 +3,14 @@
 
 #include "app.helper.h"
 
+// Type definitions
+typedef enum {
+    false,
+    true
+} bool;
+
+typedef char * string;
+
 void integerPrint       (va_list ap, string opt);
 void longPrint          (va_list ap, string opt);
 void charPrint          (va_list ap, string opt);
