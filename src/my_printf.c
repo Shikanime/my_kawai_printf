@@ -32,7 +32,7 @@ void                my_printf(char * query, ...) {
         } else {
             charPrintHelper(query[queryPosition]);
         }
-        ++i;
+        ++queryPosition;
     }
     charPrintHelper('\n');
 
