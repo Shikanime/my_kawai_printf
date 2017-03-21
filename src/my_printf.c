@@ -3,7 +3,7 @@
 /* Usable functions */
 
 void                my_printf(char * query, ...) {
-    unsigned int    i;
+    unsigned int    queryPosition;
     int             j;
     long int        querySize;
     int             opt[5];
@@ -13,10 +13,10 @@ void                my_printf(char * query, ...) {
 
     va_start(ap, query);
 
-    i = 0;
-    while (i < querySize) {
-        if (query[i] == '%') {
-          ++i;
+    queryPosition = 0;
+    while (queryPosition < querySize) {
+        if (query[queryPosition] == '%') {
+          ++queryPosition;
 
           // Options
           // TODO
@@ -24,17 +24,13 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-
-    #ifdef DEBUG_MOD
-    stringPrintHelper("ca marche\n");
-    #endif
-             if ((*check[j])(query, j) == 1){
+             if ((*check[j])(query, i) == 1){
                  (*print[j])(ap, opt);
              }
              ++j;
           }
         } else {
-            charPrintHelper(query[i]);
+            charPrintHelper(query[queryPosition]);
         }
         ++i;
     }
