@@ -6,7 +6,7 @@
 void integerPrint       (va_list ap, char* opt);
 void longPrint          (va_list ap, char* opt);
 void charPrint          (va_list ap, char* opt);
-void stringPrint        (va_list ap, char* opt);
+void char *Print        (va_list ap, char* opt);
 void pointerPrint       (va_list ap, char* opt);
 void shortPrint         (va_list ap, char* opt);
 void hexadecimalPrint   (va_list ap, char* opt);
@@ -15,7 +15,7 @@ void (*print[])(va_list ap, char* opt) = {
    integerPrint,
    longPrint,
    charPrint,
-   stringPrint,
+   char *Print,
    pointerPrint,
    shortPrint,
    hexadecimalPrint

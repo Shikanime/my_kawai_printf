@@ -12,13 +12,11 @@ typedef enum {
     true
 } bool;
 
-typedef char* string;
-
 // Functions
 
-extern long int stringLengthHelper(string s);
+extern long int char *LengthHelper(char * s);
 extern void     charPrintHelper(const char c);
-extern void     stringPrintHelper(const string s);
+extern void     char *PrintHelper(const char * s);
 extern void     integerPrintHelper(int n);
 
 #endif //MY_PRINTF_APP_HELPER

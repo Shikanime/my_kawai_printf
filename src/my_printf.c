@@ -3,14 +3,14 @@
 
 /* Usable functions */
 
-void                my_printf(const string query, ...) {
+void                my_printf(const char * query, ...) {
     unsigned int    i;
     int             j;
     long int        querySize;
     char            opt[5];
     va_list         ap;
 
-    querySize = stringLengthHelper(query);
+    querySize = char *LengthHelper(query);
 
     va_start(ap, query);
 

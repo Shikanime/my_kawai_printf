@@ -1,7 +1,7 @@
 /* Usable functions */
 
-long int stringLengthHelper(string s){
-  string	bfs;
+long int char *LengthHelper(char * s){
+  char *	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
 
@@ -12,8 +12,8 @@ void	charPrintHelper(char c){
   write(1, &c, 1);
 }
 
-void      stringPrintHelper(string s){
-  string	bfs;
+void      char *PrintHelper(char * s){
+  char *	bfs;
 
   bfs = s;
   while (*bfs != '\0'){
@@ -25,7 +25,7 @@ void      stringPrintHelper(string s){
 void  integerPrintHelper(int n){
   int	b;
   if (n == -2147483647) {
-    stringPrintHelper((const string) ("-2147483647"));
+    char *PrintHelper((const char *) ("-2147483647"));
     return EXIT_NEUTRE;
   }
   if (n < 0) {

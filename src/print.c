@@ -13,8 +13,8 @@ void charPrint(va_list ap, char* opt){
   charPrintHelper(var_arg(ap, char));
 }
 
-void stringPrint(va_list ap, char* opt){
-  stringPrintHelper(var_arg(ap, string));
+void char *Print(va_list ap, char* opt){
+  char *PrintHelper(var_arg(ap, char *));
 }
 
 void pointerPrint(va_list ap, char* opt){

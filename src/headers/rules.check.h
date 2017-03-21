@@ -3,19 +3,19 @@
 
 #include "app.helper.h"
 
-extern bool integerCheck       (const string query, int n);
-extern bool longCheck          (const string query, int n);
-extern bool charCheck          (const string query, int n);
-extern bool stringCheck        (const string query, int n);
-extern bool pointerCheck       (const string query, int n);
-extern bool shortCheck         (const string query, int n);
-extern bool hexadecimalCheck   (const string query, int n);
+extern bool integerCheck       (const char * query, int n);
+extern bool longCheck          (const char * query, int n);
+extern bool charCheck          (const char * query, int n);
+extern bool char *Check        (const char * query, int n);
+extern bool pointerCheck       (const char * query, int n);
+extern bool shortCheck         (const char * query, int n);
+extern bool hexadecimalCheck   (const char * query, int n);
 
-extern bool (*check[])(const string query, int i) = {
+extern bool (*check[])(const char * query, int i) = {
    integerCheck,
    longCheck,
    charCheck,
-   stringCheck,
+   char *Check,
    pointerCheck,
    shortCheck,
    hexadecimalCheck
