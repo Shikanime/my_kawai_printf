@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-int (*check[CHECK_NUMBER])(const char * query, unsigned int n) = {
+int (*check[7])(const char * query, unsigned int n) = {
    integerCheck,
    longCheck,
    stringCheck,
