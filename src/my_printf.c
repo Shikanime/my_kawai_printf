@@ -24,8 +24,10 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-             if ((*check[j])(query, j))
-                (*print[j])(ap, opt);
+             if ((*check[j])(query, j) == 1){
+                 integerPrintHelper(j);
+                 (*print[j])(ap, opt);
+             }
              ++j;
           }
         } else {
