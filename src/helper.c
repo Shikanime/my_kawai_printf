@@ -31,7 +31,7 @@ void  integerPrintHelper(int n){
   int	b;
 
   if (n == -2147483647) {
-    stringPrintHelper((const string) ("-2147483647"));
+    stringPrintHelper((const char *) ("-2147483647"));
     return;
   }
   if (n < 0) {
