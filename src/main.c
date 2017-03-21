@@ -1,6 +1,6 @@
 #include "loader.h"
 
-int main(int ac, string*av) {
+int main(int ac, char * av[]) {
     (void) ac;
     (void) av;
     /*
