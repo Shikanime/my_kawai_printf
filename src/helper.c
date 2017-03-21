@@ -1,15 +1,15 @@
 /* Usable functions */
 
-long int stringLengthHelper(string s){
+void	charPrintHelper(char c){
+  write(1, &c, 1);
+}
+
+size_t stringLengthHelper(const string s){
   string	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
 
   return bfs - s;
-}
-
-void	charPrintHelper(char c){
-  write(1, &c, 1);
 }
 
 void      stringPrintHelper(string s){
