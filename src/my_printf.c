@@ -24,7 +24,9 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
+                 integerPrintHelper((int)j);
              if ((*check[j])(query, positionQuery) == 1){
+                 integerPrintHelper(9999999);
                  integerPrintHelper((int)j);
                  (*print[j])(ap, opt);
              }
