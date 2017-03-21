@@ -20,7 +20,7 @@ void                my_printf(char * query, ...) {
 
           // Options
           // TODO
-stringPrintHelper("ici");
+
           // Process
           j = 0;
           while (j < 7) {
