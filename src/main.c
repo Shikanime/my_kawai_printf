@@ -3,7 +3,7 @@
 int main(int ac, char * av[]) {
     (void) ac;
     (void) av;
-    /*
+
     int integerTest;
     long longTest;
     stringstringTest;
@@ -12,6 +12,6 @@ int main(int ac, char * av[]) {
     longTest = 3000000000;
     
     my_printf("Integer: %d \n Long: %ld \n Char: %c", integerTest, longTest, stringTest);
-    */
+
     return 0;
 }

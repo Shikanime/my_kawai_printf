@@ -1,14 +1,16 @@
 #ifndef MY_PRINTF_LOADER_H
 #define MY_PRINTF_LOADER_H
 
+/* MACRO */
+
 #define PROCESS_NUMBER 7
 
-/* PROJECT LIBRARIES */
+/* LIBRARIES */
 
 #include <stdarg.h>
 #include <unistd.h>
 
-/* PROJECT FILES */
+/* FILES */
 
 // Rules
 #include "headers/rules.check.h"
