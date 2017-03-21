@@ -23,6 +23,9 @@ typedef char* string;
 
 /* PROJECT HEADERS */
 
-#include "headers/my_printf.h"
+#include "headers/app.my_printf.h"
+#include "headers/app.process.h"
+#include "headers/rules.check.h"
+#include "headers/rules.print.h""
 
 #endif //MY_PRINTF_LOADER
