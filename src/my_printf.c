@@ -3,11 +3,11 @@
 
 /* Usable functions */
 
-void                my_printf(const char * query, ...) {
+void                my_printf(char * query, ...) {
     unsigned int    i;
     int             j;
     long int        querySize;
-    stringopt[5];
+    char *          opt[5];
     va_list         ap;
 
     querySize = stringLengthHelper(query);
@@ -30,7 +30,7 @@ void                my_printf(const char * query, ...) {
              ++j;
           }
         } else {
-            stringPrintHelper(query[i]);
+            charPrintHelper(query[i]);
         }
         ++i;
     }
