@@ -9,14 +9,4 @@ int pointerCheck        (const char * query, int n);
 int shortCheck          (const char * query, int n);
 int hexadecimalCheck    (const char * query, int n);
 
-int (*check[])(const char * query, int i) = {
-   integerCheck,
-   longCheck,
-   stringCheck,
-   stringCheck,
-   pointerCheck,
-   shortCheck,
-   hexadecimalCheck
-};
-
 #endif //MY_PRINTF_RULLES_CHECK

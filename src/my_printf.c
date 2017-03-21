@@ -1,6 +1,28 @@
 #include "loader.h"
 #define PROCESS_NUMBER 7
 
+/* Global local declaration */
+
+int (*check[])(const char * query, int i) = {
+   integerCheck,
+   longCheck,
+   stringCheck,
+   stringCheck,
+   pointerCheck,
+   shortCheck,
+   hexadecimalCheck
+};
+
+void (*print[])(va_list ap, int * opt) = {
+   integerPrint,
+   longPrint,
+   stringPrint,
+   stringPrint,
+   pointerPrint,
+   shortPrint,
+   hexadecimalPrint
+};
+
 /* Usable functions */
 
 void                my_printf(char * query, ...) {
