@@ -17,12 +17,13 @@ endif
  
 #pass this environment variable to the C source
 ifeq ($(DEBUG_BUILD), 1)
-    CFLAGS +=-DEBUG_BUILD
+    CFLAGS +=-DDEBUG_BUILD
 endif
  
 # (12): typical way to list files and build full paths
 # (4): list the sources, not the object files (nor includes)
-_SRCS := $(wildcard *.c)
+_SRCS := check.c helper.c option.c my_printf.c main.c
+
 SRCS := $(patsubst %, $(SRCDIR)/%, $(_SRCS))
 OBJS := $(patsubst %, $(OBJDIR)/%, $(_SRCS:c=o))
  
