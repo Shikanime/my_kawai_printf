@@ -1,5 +1,4 @@
-#include "../../main.h"
-#include "check.h"
+#include "../../loader.h"
 
 /* local functions */
 

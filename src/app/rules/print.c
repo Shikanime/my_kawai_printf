@@ -1,5 +1,4 @@
-#include "../../main.h"
-#include "print.h"
+#include "../../loader.h"
 
 /* Local functions */
 
