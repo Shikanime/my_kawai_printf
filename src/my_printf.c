@@ -11,6 +11,8 @@ void                my_printf(char * query, ...) {
 
     sizeQuery = stringLengthHelper(query);
 
+    va_start(ap, query);
+
     positionQuery = 0;
     while (positionQuery < sizeQuery) {
         if (query[positionQuery] == '%' && query[positionQuery + 1] != '\0') {
@@ -33,4 +35,6 @@ void                my_printf(char * query, ...) {
         ++positionQuery;
     }
     charPrintHelper('\n');
+
+    va_end(ap);
 }
