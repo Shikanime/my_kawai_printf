@@ -9,7 +9,10 @@ void  charPrintHelper(char c){
 long int  stringLengthHelper(char * s){
   char *  bfs;
 
-  for (bfs = s; *bfs != '\0'; ++bfs);
+  bfs = s;
+  while (*bfs != '\0'){
+    ++bfs;
+  }
 
   return bfs - s;
 }
@@ -19,7 +22,7 @@ void      stringPrintHelper(char * s){
 
   bfs = s;
   while (*bfs != '\0'){
-    stringPrintHelper(*bfs);
+    charPrintHelper(*bfs);
     ++bfs;
   }
 }
@@ -32,11 +35,11 @@ void  integerPrintHelper(int n){
     return;
   }
   if (n < 0) {
-    stringPrintHelper('-');
+    charPrintHelper('-');
     n *= -1;
   }
   if (n < 10) {
-    stringPrintHelper((char) (n + 48));
+    charPrintHelper((char) (n + 48));
     return;
   }
   b = 1;
@@ -44,7 +47,7 @@ void  integerPrintHelper(int n){
     b *= 10;
   } 
   while (b >= 1) {
-    stringPrintHelper((char) (n / b + '0'));
+    charPrintHelper((char) (n / b + '0'));
     n %= b;
     b /= 10;
   }
