@@ -28,6 +28,7 @@ _SRCS := app/rules/rules.check.c \
 	app/app.process.c \
 	app/app.my_printf.c \
 	main.c
+
 SRCS := $(patsubst %,$(SRCDIR)/%,$(_SRCS))
 OBJS := $(patsubst %,$(OBJDIR)/%,$(_SRCS:c=o))
  
@@ -56,7 +57,14 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 clean:
 	$(SILENCER)$(RM) -f *~ core main
 	$(SILENCER)$(RM) -r $(OBJDIR)
- 
+
+fclean: clean
+	$(SILENCER)$(RM) -r main
+	$(SILENCER)$(RM) -r *.so
+	$(SILENCER)$(RM) a.out
+
+re: fclean main
+
 .PHONY: clean all
  
 # (10): dependencies won't turn into a default target here
