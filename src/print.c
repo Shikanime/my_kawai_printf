@@ -1,27 +1,27 @@
-#include "loader.h"
+#include "headers/rules.print.h"
 
 /* Local functions */
 
-void integerPrint(va_list ap, char* opt){
+void integerPrint(va_list ap, string opt){
   integerPrintHelper(var_arg(ap, int));
 }
 
-void longPrint(va_list ap, char* opt){
+void longPrint(va_list ap, string opt){
 }
 
-void charPrint(va_list ap, char* opt){
-  charPrintHelper(var_arg(ap, char));
+void charPrint(va_list ap, string opt){
+  stringPrintHelper(var_arg(ap, string));
 }
 
-void char *Print(va_list ap, char* opt){
-  char *PrintHelper(var_arg(ap, char *));
+void stringPrint(va_list ap, string opt){
+  stringPrintHelper(var_arg(ap, string));
 }
 
-void pointerPrint(va_list ap, char* opt){
+void pointerPrint(va_list ap, string opt){
 }
 
-void shortPrint(va_list ap, char* opt){
+void shortPrint(va_list ap, string opt){
 }
 
-void hexadecimalPrint(va_list ap, char* opt){
+void hexadecimalPrint(va_list ap, string opt){
 }

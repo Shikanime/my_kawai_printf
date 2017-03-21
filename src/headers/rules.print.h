@@ -3,19 +3,19 @@
 
 #include "app.helper.h"
 
-void integerPrint       (va_list ap, char* opt);
-void longPrint          (va_list ap, char* opt);
-void charPrint          (va_list ap, char* opt);
-void char *Print        (va_list ap, char* opt);
-void pointerPrint       (va_list ap, char* opt);
-void shortPrint         (va_list ap, char* opt);
-void hexadecimalPrint   (va_list ap, char* opt);
+void integerPrint       (va_list ap, string opt);
+void longPrint          (va_list ap, string opt);
+void charPrint          (va_list ap, string opt);
+void stringPrint        (va_list ap, string opt);
+void pointerPrint       (va_list ap, string opt);
+void shortPrint         (va_list ap, string opt);
+void hexadecimalPrint   (va_list ap, string opt);
 
-void (*print[])(va_list ap, char* opt) = {
+void (*print[])(va_list ap, string opt) = {
    integerPrint,
    longPrint,
-   charPrint,
-   char *Print,
+   stringPrint,
+   stringPrint,
    pointerPrint,
    shortPrint,
    hexadecimalPrint

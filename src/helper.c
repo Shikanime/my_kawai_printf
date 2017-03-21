@@ -1,7 +1,7 @@
 /* Usable functions */
 
-long int char *LengthHelper(char * s){
-  char *	bfs;
+long int stringLengthHelper(string s){
+  string	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
 
@@ -12,12 +12,12 @@ void	charPrintHelper(char c){
   write(1, &c, 1);
 }
 
-void      char *PrintHelper(char * s){
-  char *	bfs;
+void      stringPrintHelper(string s){
+  string	bfs;
 
   bfs = s;
   while (*bfs != '\0'){
-    charPrintHelper(*bfs);
+    stringPrintHelper(*bfs);
     ++bfs;
   }
 }
@@ -25,15 +25,15 @@ void      char *PrintHelper(char * s){
 void  integerPrintHelper(int n){
   int	b;
   if (n == -2147483647) {
-    char *PrintHelper((const char *) ("-2147483647"));
+    stringPrintHelper((const string) ("-2147483647"));
     return EXIT_NEUTRE;
   }
   if (n < 0) {
-    charPrintHelper('-');
+    stringPrintHelper('-');
     n *= -1;
   }
   if (n < 10) {
-    charPrintHelper((char) (n + 48));
+    stringPrintHelper((char) (n + 48));
     return EXIT_NEUTRE;
   }
   b = 1;
@@ -41,7 +41,7 @@ void  integerPrintHelper(int n){
     b *= 10;
   } 
   while (b >= 1) {
-    charPrintHelper((char) (n / b + '0'));
+    stringPrintHelper((char) (n / b + '0'));
     n %= b;
     b /= 10;
   }
