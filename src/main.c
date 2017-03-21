@@ -13,5 +13,5 @@ int main(int ac, char * av[]) {
     
     my_printf("Integer: %d \n Long: %ld \n Char: %c", integerTest, longTest, stringTest);
     */
-    return 0;;
+    return 0;
 }

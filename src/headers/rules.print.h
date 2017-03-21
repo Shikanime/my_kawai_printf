@@ -1,13 +1,13 @@
 #ifndef MY_PRINTF_RULLES_PRINT_H
 #define MY_PRINTF_RULLES_PRINT_H
 
-extern void integerPrint       (va_list ap, int * opt);
-extern void longPrint          (va_list ap, int * opt);
-extern void charPrint          (va_list ap, int * opt);
-extern void stringPrint        (va_list ap, int * opt);
-extern void pointerPrint       (va_list ap, int * opt);
-extern void shortPrint         (va_list ap, int * opt);
-extern void hexadecimalPrint   (va_list ap, int * opt);
+void integerPrint       (va_list ap, int * opt);
+void longPrint          (va_list ap, int * opt);
+void charPrint          (va_list ap, int * opt);
+void stringPrint        (va_list ap, int * opt);
+void pointerPrint       (va_list ap, int * opt);
+void shortPrint         (va_list ap, int * opt);
+void hexadecimalPrint   (va_list ap, int * opt);
 
 void (*print[])(va_list ap, int * opt) = {
    integerPrint,
