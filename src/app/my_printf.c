@@ -4,11 +4,11 @@
 /* Usable functions */
 
 void        my_printf(const string query, ...) {
-    int     i,
-            j,
-            opt[5];
-    size_t  querySize;
-    va_list ap;
+    unsigned int    i,
+                    j;
+    int             opt[5];
+    size_t          querySize;
+    va_list         ap;
 
     querySize = stringLengthHelper(query);
 
@@ -30,7 +30,7 @@ void        my_printf(const string query, ...) {
              ++j;
           }
         } else {
-            chr_print(query[i]);
+            charPrintHelper(query[i]);
         }
         ++i;
     }
