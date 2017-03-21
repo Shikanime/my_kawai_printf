@@ -35,5 +35,5 @@ void                my_printf(const string query, ...) {
         ++i;
     }
 
-    var_end(ap);
+    va_end(ap);
 }
