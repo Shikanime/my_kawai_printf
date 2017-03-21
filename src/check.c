@@ -15,7 +15,6 @@ int (*check[CHECK_NUMBER])(const char * query, unsigned int n) = {
 /* local functions */
 
 int integerCheck(const char * query, unsigned int n){
-  stringPrintHelper("ici en int");
   if (query[n] == 'd')
     return 1;
   return 0;
