@@ -1,5 +1,17 @@
 #include "loader.h"
 
+/* Usable functions */
+
+int (*check[])(const char * query, int i) = {
+   integerCheck,
+   longCheck,
+   stringCheck,
+   stringCheck,
+   pointerCheck,
+   shortCheck,
+   hexadecimalCheck
+};
+
 /* local functions */
 
 int integerCheck(const char * query, int n){

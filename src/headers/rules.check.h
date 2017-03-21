@@ -1,6 +1,7 @@
 #ifndef MY_PRINTF_RULLES_CHECK_H
 #define MY_PRINTF_RULLES_CHECK_H
 
+int (*check[])          (const char * query, int i);
 int integerCheck        (const char * query, int n);
 int longCheck           (const char * query, int n);
 int charCheck           (const char * query, int n);

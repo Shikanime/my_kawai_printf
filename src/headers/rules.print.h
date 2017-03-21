@@ -1,6 +1,7 @@
 #ifndef MY_PRINTF_RULLES_PRINT_H
 #define MY_PRINTF_RULLES_PRINT_H
 
+void (*print[])         (va_list ap, int * opt);
 void integerPrint       (va_list ap, int * opt);
 void longPrint          (va_list ap, int * opt);
 void charPrint          (va_list ap, int * opt);

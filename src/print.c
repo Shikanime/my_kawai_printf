@@ -1,5 +1,17 @@
 #include "loader.h"
 
+/* Usable functions */
+
+void (*print[])(va_list ap, int * opt) = {
+   integerPrint,
+   longPrint,
+   stringPrint,
+   stringPrint,
+   pointerPrint,
+   shortPrint,
+   hexadecimalPrint
+};
+
 /* Local functions */
 
 void integerPrint(va_list ap, int * opt){
