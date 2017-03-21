@@ -11,11 +11,11 @@ long int  stringLengthHelper(string s){
   return bfs - s;
 }
 
-void	charPrintHelper(const char c){
+void	charPrintHelper(char c){
   write(1, &c, 1);
 }
 
-void      stringPrintHelper(const string s){
+void      stringPrintHelper(string s){
   string	bfs;
 
   bfs = s;
@@ -37,7 +37,7 @@ void  integerPrintHelper(int n){
     n *= -1;
   }
   if (n < 10) {
-    charPrintHelper(n + 48);
+    charPrintHelper((char) n + 48);
     return EXIT_NEUTRE;
   }
   b = 1;
@@ -45,7 +45,7 @@ void  integerPrintHelper(int n){
     b *= 10;
   } 
   while (b >= 1) {
-    charPrintHelper(n / b + '0');
+    charPrintHelper((char) n / b + '0');
     n %= b;
     b /= 10;
   }
