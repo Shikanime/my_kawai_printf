@@ -25,7 +25,9 @@ void                my_printf(char * query, ...) {
           j = 0;
           while (j < 7) {
              if ((*check[j])(query, j) == 1){
-                 integerPrintHelper(j);
+    #ifdef DEBUG_MOD
+    stringPrintHelper("ca marche\n");
+    #endif
                  (*print[j])(ap, opt);
              }
              ++j;
