@@ -7,7 +7,9 @@ int main(int ac, char * av[]) {
     int integerTest;
     long longTest;
     char * stringTest;
-    
+    #ifdef DEBUG_BUILD
+    stringPrintHelper("ca marche");
+    #endif
     integerTest = 666;
     longTest = 3000000000;
     

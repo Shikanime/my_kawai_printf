@@ -17,7 +17,7 @@ endif
  
 #pass this environment variable to the C source
 ifeq ($(DEBUG_BUILD), 1)
-    CFLAGS +=-DDEBUG_BUILD
+    CFLAGS +=-DEBUG_BUILD
 endif
  
 # (12): typical way to list files and build full paths
