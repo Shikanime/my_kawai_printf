@@ -24,10 +24,11 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-             if ((*check[j])(query, j) == 1){
+
     #ifdef DEBUG_MOD
     stringPrintHelper("ca marche\n");
     #endif
+             if ((*check[j])(query, j) == 1){
                  (*print[j])(ap, opt);
              }
              ++j;
