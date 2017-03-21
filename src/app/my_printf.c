@@ -4,8 +4,8 @@
 /* Usable functions */
 
 void        my_printf(const string query, ...) {
-    unsigned int    i,
-                    j;
+  unsigned int    i;
+   int             j;
     int             opt[5];
     size_t          querySize;
     va_list         ap;

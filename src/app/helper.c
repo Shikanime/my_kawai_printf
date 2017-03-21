@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-long int  stringLengthHelper(string s){
+size_t stringLengthHelper(string s){
   string	bfs;
 
   for (bfs = s; *bfs != '\0'; ++bfs);
