@@ -17,7 +17,7 @@ typedef char * string;
 // Functions
 
 extern void     charPrintHelper     (char c);
-extern size_t   stringLengthHelper  (const string s);
+extern long int stringLengthHelper  (const string s);
 extern void     stringPrintHelper   (const string s);
 extern void     integerPrintHelper  (int n);
 

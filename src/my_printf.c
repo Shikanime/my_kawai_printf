@@ -6,7 +6,7 @@
 void                my_printf(const string query, ...) {
     unsigned int    i;
     int             j;
-    size_t          querySize;
+    long int        querySize;
     stringopt[5];
     va_list         ap;
 
