@@ -4,7 +4,7 @@
 
 void                my_printf(char * query, ...) {
     unsigned int    positionQuery;
-    int             j;
+    unsigned int    j;
     long int        sizeQuery;
     int             opt[5];
     va_list         ap;
@@ -25,6 +25,7 @@ void                my_printf(char * query, ...) {
           j = 0;
           while (j < 7) {
              if ((*check[j])(query, positionQuery) == 1){
+                 integerPrintHelper((int)j);
                  (*print[j])(ap, opt);
              }
              ++j;
