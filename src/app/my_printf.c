@@ -5,8 +5,8 @@
 
 void        my_printf(const string query, ...) {
     int     i,
-            j
-            opt[5];
+      j,
+      opt[5];
     size_t  querySize;
     va_list ap;
 

@@ -26,6 +26,7 @@ typedef char* string;
 #include "headers/rules.check.h"
 #include "headers/rules.option.h"
 #include "headers/rules.print.h"
+#include "headers/app.my_printf.h"
 #include "headers/app.helper.h"
 
 #endif //MY_PRINTF_LOADER
