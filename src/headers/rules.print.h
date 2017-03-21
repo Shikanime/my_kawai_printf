@@ -1,6 +1,8 @@
 #ifndef MY_PRINTF_RULLES_PRINT_H
 #define MY_PRINTF_RULLES_PRINT_H
 
+#include "app.helper.h"
+
 void integerPrint       (va_list ap, char* opt);
 void longPrint          (va_list ap, char* opt);
 void charPrint          (va_list ap, char* opt);
@@ -18,7 +20,5 @@ void (*print[])(va_list ap, char* opt) = {
    shortPrint,
    hexadecimalPrint
 };
-
-#include "app.helper.h"
 
 #endif //MY_PRINTF_RULLES_PRINT
