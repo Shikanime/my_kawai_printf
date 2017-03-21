@@ -1,10 +1,6 @@
 #ifndef MY_PRINTF_LOADER_H
 #define MY_PRINTF_LOADER_H
 
-/* MACRO */
-
-#define PROCESS_NUMBER 7
-
 /* LIBRARIES */
 
 #include <stdarg.h>
