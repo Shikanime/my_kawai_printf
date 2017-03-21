@@ -6,7 +6,7 @@ void                my_printf(char * query, ...) {
     unsigned int    positionQuery;
     unsigned int    j;
     long int        sizeQuery;
-    int             opt[5];
+//    int             opt[5];
     va_list         ap;
 
     sizeQuery = stringLengthHelper(query);
@@ -25,7 +25,7 @@ void                my_printf(char * query, ...) {
           j = 0;
           while (j < 7) {
              if ((*check[j])(query, positionQuery) == 1){
-                 (*print[j])(&ap, query, opt);
+
              }
              ++j;
           }
