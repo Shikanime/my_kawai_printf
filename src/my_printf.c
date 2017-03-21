@@ -25,8 +25,6 @@ void                my_printf(char * query, ...) {
           j = 0;
           while (j < 7) {
              if ((*check[j])(query, positionQuery) == 1){
-                 stringPrintHelper("ici a l interieur de");
-                 integerPrintHelper(positionQuery);
                  (*print[j])(ap, opt);
              }
              ++j;
