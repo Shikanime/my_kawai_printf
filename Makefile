@@ -22,11 +22,7 @@ endif
  
 # (12): typical way to list files and build full paths
 # (4): list the sources, not the object files (nor includes)
-_SRCS := app/rules/check.c \
-	app/rules/option.c \
-	app/rules/print.c \
-	app/my_printf.c \
-	main.c
+_SRCS := main.c app/my_printf.c
 
 SRCS := $(patsubst %,$(SRCDIR)/%,$(_SRCS))
 OBJS := $(patsubst %,$(OBJDIR)/%,$(_SRCS:c=o))
@@ -44,13 +40,11 @@ createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
  
 main: $(OBJS) 
-	@echo " LINK $^"
 	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^ 
  
 # (6): put the object (and dependency!) files away from the sources
 # (9): create the dir before building into it
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
-	@echo " CC $<"
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $< 
  
 clean:
