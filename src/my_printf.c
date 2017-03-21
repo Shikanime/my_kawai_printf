@@ -23,7 +23,7 @@ void                my_printf(char * query, ...) {
 
           // Process
           j = 0;
-          while (j < PROCESS_NUMBER) {
+          while (j < 7) {
              if ((*check[j])(query, j))
                 (*print[j])(ap, opt);
              ++j;
