@@ -17,7 +17,7 @@ enum {
     longDoubleLenght
 };
 
-int (*option[OPTION_NUMBER])(const char * query, unint n, int * opt);
-int longOption(const char * query, unint n, int * opt);
+int (*option[OPTION_NUMBER])(const char * query, int n, int * opt);
+int longOption(const char * query, int n, int * opt);
 
 #endif //MY_PRINTF_RULLES_OPTION

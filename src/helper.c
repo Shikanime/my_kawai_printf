@@ -27,8 +27,8 @@ void      stringPrintHelper(const char * s){
   }
 }
 
-void  unsignedIntegerPrintHelper(unint n){
-  unint	b;
+void  unsignedIntegerPrintHelper(int n){
+  int	b;
 
   if (n < 10) {
     charPrintHelper((char) (n + 48));
@@ -53,7 +53,7 @@ void  integerPrintHelper(int n){
     charPrintHelper('-');
     n *= -1;
   }
-  unsignedIntegerPrintHelper((unint) n);
+  unsignedIntegerPrintHelper((int) n);
 }
 
 void  unsignedHexadecimalPrintHelper(long long n){

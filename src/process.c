@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-int (*process[PROCESS_NUMBER])(const char * query, unint n, va_list ap, int * opt) = {
+int (*process[PROCESS_NUMBER])(const char * query, int n, va_list ap, int * opt) = {
    escapeProcess,
    integerProcess,
    charProcess,
@@ -15,7 +15,7 @@ int (*process[PROCESS_NUMBER])(const char * query, unint n, va_list ap, int * op
 
 /* local functions */
 
-int escapeProcess(const char * query, unint n, va_list ap, int * opt){
+int escapeProcess(const char * query, int n, va_list ap, int * opt){
   (void) ap;
   (void) opt;
   if (query[n] == '%'){
@@ -25,7 +25,7 @@ int escapeProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int integerProcess(const char * query, unint n, va_list ap, int * opt){
+int integerProcess(const char * query, int n, va_list ap, int * opt){
   if (query[n] == 'd' || query[n] == 'i'){
     if (opt[lenghtMod] == longIntLenght){
       integerPrintHelper(va_arg(ap, int)); // TO DO
@@ -39,7 +39,7 @@ int integerProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int charProcess(const char * query, unint n, va_list ap, int * opt){
+int charProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'c'){
     charPrintHelper((char) va_arg(ap, int));
@@ -48,7 +48,7 @@ int charProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int stringProcess(const char * query, unint n, va_list ap, int * opt){
+int stringProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 's'){
     stringPrintHelper(va_arg(ap, char *));
@@ -57,7 +57,7 @@ int stringProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int pointerProcess(const char * query, unint n, va_list ap, int * opt){
+int pointerProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'p'){
     addressPrintHelper(va_arg(ap, long long));
@@ -66,7 +66,7 @@ int pointerProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int hexadecimalProcess(const char * query, unint n, va_list ap, int * opt){
+int hexadecimalProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'x'){
     unsignedHexadecimalPrintHelper(va_arg(ap, long long));
@@ -78,7 +78,7 @@ int hexadecimalProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int octalProcess(const char * query, unint n, va_list ap, int * opt){
+int octalProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'o'){
     signedOctalPrintHelper(va_arg(ap, int));
@@ -87,10 +87,10 @@ int octalProcess(const char * query, unint n, va_list ap, int * opt){
   return 0;
 }
 
-int unsignedIntegerProcess(const char * query, unint n, va_list ap, int * opt){
+int unsignedIntegerProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'u'){
-    unsignedIntegerPrintHelper(va_arg(ap, unint));
+    unsignedIntegerPrintHelper(va_arg(ap, int));
     return 1; 
   }
   return 0;

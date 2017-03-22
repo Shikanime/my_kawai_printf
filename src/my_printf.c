@@ -3,8 +3,8 @@
 /* Usable functions */
 
 void                my_printf(const char * query, ...) {
-    unint    positionQuery;
-    unint    j;
+    int    positionQuery;
+    int    j;
     long int        sizeQuery;
     int             opt[5];
     va_list         ap;
