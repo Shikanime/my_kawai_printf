@@ -17,7 +17,7 @@
 #include "rules.option.h"
 
 // Main
-#include "headers/app.my_printf.h"
-#include "headers/app.helper.h"
+#include "app.my_printf.h"
+#include "app.helper.h"
 
 #endif //MY_PRINTF_LOADER
