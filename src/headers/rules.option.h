@@ -12,6 +12,6 @@ enum {
 };
 
 int (*option[OPTION_NUMBER])(const char * query, unsigned int n, int ** opt);
-int escapeOption(const char * query, unsigned int n, int ** opt);
+int longOption(const char * query, unsigned int n, int ** opt);
 
 #endif //MY_PRINTF_RULLES_OPTION
