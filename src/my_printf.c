@@ -31,7 +31,7 @@ void                my_printf(const char * query, ...) {
           j = 0;
           while (j < PROCESS_NUMBER) {
              if ((*process[j])(query, positionQuery, ap, opt)){
-                 integerPrintHelper(j);
+                 integerPrintHelper((int)j);
                  j = PROCESS_NUMBER;
              }
              ++j;
