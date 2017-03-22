@@ -35,6 +35,7 @@ void charPrint(va_list ap, int * opt){
   charPrintHelper((char) va_arg(ap, int));
 }
 
+
 void stringPrint(va_list ap, int * opt){
   (void) opt;
   stringPrintHelper(va_arg(ap, char *));
