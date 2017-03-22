@@ -27,8 +27,8 @@ void      stringPrintHelper(const char * s){
   }
 }
 
-void  unsignedIntegerPrintHelper(int n){
-  int	b;
+void            unsignedIntegerPrintHelper(unsigned int n){
+  unsigned int	b;
 
   if (n < 10) {
     charPrintHelper((char) (n + 48));
