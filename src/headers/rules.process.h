@@ -1,7 +1,7 @@
 #ifndef MY_PRINTF_RULLES_PROCESS_H
 #define MY_PRINTF_RULLES_PROCESS_H
 
-#define PROCESS_NUMBER 7
+#define PROCESS_NUMBER 8
 
 int (*process[PROCESS_NUMBER])  (const char * query, unsigned int n, va_list ap, int * opt);
 int escapeProcess               (const char * query, unsigned int n, va_list ap, int * opt);
