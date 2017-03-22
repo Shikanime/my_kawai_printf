@@ -7,7 +7,7 @@ void  charPrintHelper(char c){
 }
 
 long int  stringLengthHelper(const char * s){
-  char *  bfs;
+  const char *  bfs;
 
   bfs = s;
   while (*bfs != '\0'){
@@ -18,7 +18,7 @@ long int  stringLengthHelper(const char * s){
 }
 
 void      stringPrintHelper(const char * s){
-  char *  bfs;
+  const char *  bfs;
 
   bfs = s;
   while (*bfs != '\0'){
