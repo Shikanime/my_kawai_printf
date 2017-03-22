@@ -19,6 +19,7 @@ void escapePrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
   charPrintHelper('%');
+  stringPrintHelper("ici");
 }
 
 void integerPrint(va_list ap, int * opt){
