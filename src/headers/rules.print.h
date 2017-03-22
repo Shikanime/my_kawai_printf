@@ -4,6 +4,7 @@
 #define PROCESS_NUMBER 8
 
 void (*print[PROCESS_NUMBER])   (va_list ap, int * opt);
+void escapePrint                (va_list ap, int * opt);
 void integerPrint               (va_list ap, int * opt);
 void longPrint                  (va_list ap, int * opt);
 void charPrint                  (va_list ap, int * opt);

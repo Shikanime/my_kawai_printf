@@ -4,6 +4,7 @@
 #define PROCESS_NUMBER 8
 
 int (*check[PROCESS_NUMBER])    (const char * query, unsigned int n);
+int escapeCheck                 (const char * query, unsigned int n);
 int integerCheck                (const char * query, unsigned int n);
 int longCheck                   (const char * query, unsigned int n);
 int charCheck                   (const char * query, unsigned int n);
