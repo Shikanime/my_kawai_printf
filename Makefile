@@ -18,8 +18,8 @@ ifeq ($(DEBUG_BUILD), 1)
     CFLAGS +=-DDEBUG_BUILD
 endif
 
-SRCF := process.c \
-		option.c \
+SRCF := rules.process.c \
+		rules.option.c \
 		helper.c \
 		my_printf.c \
 		test.c
@@ -40,7 +40,13 @@ main: $(OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
- 
+
+my_printf_static: $(OBJS)
+	$(SILENCER)$(CC) $(CFLAGS) -static -L. -llibmy_printf_phetsi_w -o $@ $^ 
+
+my_printf_dynamic: $(OBJS)
+	$(SILENCER)$(CC) $(CFLAGS) -shared -Wl,-soname,libmy_printf_phetsi_w.so -o $@ $^ 
+
 clean:
 	$(SILENCER)$(RM) -f *~ core main
 	$(SILENCER)$(RM) -r $(OBJDIR)

@@ -10,7 +10,9 @@ int (*process[PROCESS_NUMBER])(const char * query, int n, int * opt, va_list * a
    pointerProcess,
    hexadecimalProcess,
    octalProcess,
-   unsignedIntegerProcess
+   unsignedIntegerProcess,
+   floatPointProcess,
+   doublePrecisionProcess
 };
 
 /* Rule list functions */
@@ -92,6 +94,28 @@ int unsignedIntegerProcess(const char * query, int n, int * opt, va_list * ap){
   if (query[n] == 'u'){
     unsignedIntegerPrintHelper(va_arg(*ap, unsigned int));
     return 1; 
+  }
+  return 0;
+}
+
+int floatPointProcess(const char * query, int n, int * opt, va_list * ap){
+  (void) opt;
+  if (query[n] == 'f'){
+    return 1;
+  } else if (query[n] == 'F'){
+    return 1;
+  } else if (query[n] == 'G'){
+    return 1;
+  }
+  return 0;
+}
+
+int doublePrecisionProcess(const char * query, int n, int * opt, va_list * ap){
+  (void) opt;
+  if (query[n] == 'e'){
+    return 1;
+  } else if (query[n] == 'E'){
+    return 1;
   }
   return 0;
 }
