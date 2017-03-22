@@ -49,6 +49,7 @@ int charProcess(const char * query, unsigned int n, va_list ap, int * opt){
 int stringProcess(const char * query, unsigned int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 's'){
+    charPrintHelper(va_arg(ap, char *)[0]);
     stringPrintHelper(va_arg(ap, char *));
     return 1;
   }
