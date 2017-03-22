@@ -19,14 +19,20 @@ void                my_printf(const char * query, ...) {
           ++positionQuery;
 
           // Options
-          // TODO
+          j = 0;
+          while (j < OPTION_NUMBER) {
+             if ((*option[j])(query, positionQuery, &opt)){
+                 j = OPTION_NUMBER;
+             }
+             ++j;
+          }
 
           // Process
           j = 0;
-          while (j < 8) {
+          while (j < PROCESS_NUMBER) {
              if ((*check[j])(query, positionQuery)){
                  (*print[j])(ap, opt);
-                 j = 8;
+                 j = PROCESS_NUMBER;
              }
              ++j;
           }
