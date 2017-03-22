@@ -39,7 +39,7 @@ main: $(OBJS)
 	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^ 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
-	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $< 
+	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
  
 clean:
 	$(SILENCER)$(RM) -f *~ core main
