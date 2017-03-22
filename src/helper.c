@@ -54,7 +54,7 @@ void  integerPrintHelper(int n){
 }
 
 void  hexadecimalPrintHelper(long long n){
-  int	bfn;
+  long long	bfn;
 
   if (n > 15){
       bfn = n % 16;
