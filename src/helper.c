@@ -74,8 +74,8 @@ void  unsignedHexadecimalPrintHelper(unsigned long long n){
   }
 }
 
-void  unsignedHexadecimalCapitalPrintHelper(unsigned long long n){
-  unsigned long long bfn;
+void  unsignedHexadecimalCapitalPrintHelper(long long n){
+  long long bfn;
 
   if (n >= 16){
       bfn = n % 16;
