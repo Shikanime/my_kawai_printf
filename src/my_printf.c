@@ -14,7 +14,7 @@ void                my_printf(const char * query, ...) {
     va_start(ap, query);
 
     positionQuery = 0;
-    while (positionQuery < sizeQuery) {
+    while (positionQuery < sizeQuery - 1) {
         if (query[positionQuery] == '%' && query[positionQuery + 1] != '\0') {
           ++positionQuery;
 
