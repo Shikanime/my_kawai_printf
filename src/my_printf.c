@@ -40,7 +40,6 @@ void                my_printf(const char * query, ...) {
         }
         ++positionQuery;
     }
-    charPrintHelper('\n');
 
     va_end(ap);
 }
