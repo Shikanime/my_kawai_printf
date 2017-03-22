@@ -92,14 +92,14 @@ void  hexadecimalCapitalPrintHelper(unsigned long long n){
   }
 }
 
-void	addressPrintHelper(long long n){
+void	addressPrintHelper(unsigned long long n){
   stringPrintHelper("0x");
   hexadecimalPrintHelper(n);
 }
 
-void	octalPrintHelper(int n){
-  int m;
-  int i;
+void	octalPrintHelper(unsigned int n){
+  unsigned int m;
+  unsigned int i;
 
   m = 0;
   i = 1;
