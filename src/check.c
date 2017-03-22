@@ -3,7 +3,7 @@
 /* Usable functions */
 
 int (*check[PROCESS_NUMBER])(const char * query, unsigned int n) = {
-   espaceCheck,
+   escapeCheck,
    integerCheck,
    longCheck,
    charCheck,
