@@ -6,9 +6,9 @@ long int    stringLengthHelper              (const char * s);
 void        stringPrintHelper               (const char * s);
 void        integerPrintHelper              (int n);
 void        unsignedIntegerPrintHelper      (unsigned int n);
-void	    addressPrintHelper              (long long n);
-void        HexadecimalPrintHelper          (long long n);
-void        HexadecimalCapitalPrintHelper   (long long n);
-void	    signedOctalPrintHelper          (int n);
+void	    addressPrintHelper              (unsigned long long n);
+void        HexadecimalPrintHelper          (unsigned long long n);
+void        HexadecimalCapitalPrintHelper   (unsigned long long n);
+void	    octalPrintHelper                (unsigned int n);
 
 #endif //MY_PRINTF_APP_HELPER
