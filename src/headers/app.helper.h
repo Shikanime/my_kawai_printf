@@ -5,7 +5,7 @@ void        charPrintHelper                 (char c);
 long int    stringLengthHelper              (const char * s);
 void        stringPrintHelper               (const char * s);
 void        integerPrintHelper              (int n);
-void        unsignedintegerPrintHelper      (unsigned int n);
+void        unsignedIntegerPrintHelper      (unsigned int n);
 void	    addressPrintHelper              (long long n);
 void        HexadecimalPrintHelper          (long long n);
 void        HexadecimalCapitalPrintHelper   (long long n);
