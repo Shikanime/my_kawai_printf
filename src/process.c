@@ -10,7 +10,7 @@ int (*process[PROCESS_NUMBER])(const char * query, unsigned int n, va_list ap, i
    pointerProcess,
    hexadecimalProcess,
    octalProcess,
-   unsignedInteger
+   unsignedIntegerProcess
 };
 
 /* local functions */
