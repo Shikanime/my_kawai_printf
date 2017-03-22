@@ -24,6 +24,7 @@ int escapeProcess(const char * query, unsigned int n, va_list ap, int * opt){
 }
 
 int integerProcess(const char * query, unsigned int n, va_list ap, int * opt){
+  stringPrintHelper("test");
   if (query[n] == 'd'){
     if (opt[lenghtMod] == longIntLenght){
       integerPrintHelper(va_arg(ap, int)); // TO DO

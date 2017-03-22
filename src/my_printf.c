@@ -26,7 +26,7 @@ void                my_printf(const char * query, ...) {
              }
              ++j;
           }
-stringPrintHelper("test");
+
           // Process
           j = 0;
           while (j < PROCESS_NUMBER) {
