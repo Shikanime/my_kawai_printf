@@ -81,7 +81,7 @@ int hexadecimalProcess(const char * query, int n, va_list ap, int * opt){
 int octalProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'o'){
-    octalPrintHelper(va_arg(ap, int));
+    octalPrintHelper(va_arg(ap, unsigned int));
     return 1; 
   }
   return 0;
