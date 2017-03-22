@@ -3,14 +3,14 @@
 
 #define PROCESS_NUMBER 8
 
-int (*process[PROCESS_NUMBER])  (const char * query, int n, va_list ap, int * opt);
-int escapeProcess               (const char * query, int n, va_list ap, int * opt);
-int integerProcess              (const char * query, int n, va_list ap, int * opt);
-int charProcess                 (const char * query, int n, va_list ap, int * opt);
-int stringProcess               (const char * query, int n, va_list ap, int * opt);
-int pointerProcess              (const char * query, int n, va_list ap, int * opt);
-int hexadecimalProcess          (const char * query, int n, va_list ap, int * opt);
-int octalProcess                (const char * query, int n, va_list ap, int * opt);
-int unsignedIntegerProcess      (const char * query, int n, va_list ap, int * opt);
+int (*process[PROCESS_NUMBER])  (const char * query, int n, int * opt, va_list * ap);
+int escapeProcess               (const char * query, int n, int * opt, va_list * ap);
+int integerProcess              (const char * query, int n, int * opt, va_list * ap);
+int charProcess                 (const char * query, int n, int * opt, va_list * ap);
+int stringProcess               (const char * query, int n, int * opt, va_list * ap);
+int pointerProcess              (const char * query, int n, int * opt, va_list * ap);
+int hexadecimalProcess          (const char * query, int n, int * opt, va_list * ap);
+int octalProcess                (const char * query, int n, int * opt, va_list * ap);
+int unsignedIntegerProcess      (const char * query, int n, int * opt, va_list * ap);
 
 #endif //MY_PRINTF_RULLES_PROCESS
