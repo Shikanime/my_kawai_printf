@@ -102,13 +102,13 @@ int floatPointProcess(const char * query, int n, int * opt, va_list * ap){
   (void) query;
   (void) opt;
   if (query[n] == 'f'){
-    va_arg(*ap, float);
+    va_arg(*ap, double);
     return 1;
   } else if (query[n] == 'F'){
-    va_arg(*ap, float);
+    va_arg(*ap, double);
     return 1;
   } else if (query[n] == 'G'){
-    va_arg(*ap, float);
+    va_arg(*ap, double);
     return 1;
   }
   return 0;
