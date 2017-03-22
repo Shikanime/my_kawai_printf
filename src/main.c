@@ -5,10 +5,10 @@ int main(int ac, char * av[]) {
     (void) av;
 
     // Single
-    my_printf("Integer: %d", 3);
-    my_printf("Escape: %%");
-    my_printf("Long: %hd", 444);
-    my_printf("Char: %c", 'c');
+    // VALIDATED my_printf("Integer: %d", 3);
+    // VALIDATED my_printf("Escape: %%");
+    // REVIEW my_printf("Long: %hd", 444);
+    // VALIDATED my_printf("Char: %c", 'c');
     my_printf("Hex: %x", 3939);
     my_printf("Octal: %o", 139);
     my_printf("String: %s", "cest une string");

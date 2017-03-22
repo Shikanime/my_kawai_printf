@@ -29,9 +29,9 @@ void                my_printf(const char * query, ...) {
 
           // Process
           j = 0;
-          while (j < 7) {
+          while (j < PROCESS_NUMBER) {
              if ((*process[j])(query, positionQuery, ap, opt)){
-                 j = 7;
+                 j = PROCESS_NUMBER;
              }
              ++j;
           }
