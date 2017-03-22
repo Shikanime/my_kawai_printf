@@ -30,8 +30,8 @@ void integerPrint(va_list ap, int * opt){
 }
 
 void longPrint(va_list ap, int * opt){
-  (void) ap;
   (void) opt;
+  integerPrintHelper(va_arg(ap, int)); // TODO double modif
 }
 
 void charPrint(va_list ap, int * opt){
