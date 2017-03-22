@@ -13,7 +13,7 @@ int (*process[PROCESS_NUMBER])(const char * query, int n, va_list ap, int * opt)
    unsignedIntegerProcess
 };
 
-/* local functions */
+/* Rule list functions */
 
 int escapeProcess(const char * query, int n, va_list ap, int * opt){
   (void) ap;
