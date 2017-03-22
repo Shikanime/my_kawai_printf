@@ -14,7 +14,7 @@ int main(int ac, char * av[]) {
     charTest = 'a';
     stringTest = "Mec ca marche aussi";
     
-    my_printf("Integer: %d \nLong: %ld \nChar: %c\n String: %s\n Empty: %\n", integerTest, longTest, stringTest);
+    my_printf("Integer: %d \nLong: %ld \nChar: %c\n String: %s\n Empty: %\n", integerTest, longTest, charTest, stringTest);
 
     return 0;
 }
