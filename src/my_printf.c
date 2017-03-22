@@ -22,6 +22,10 @@ void                my_printf(const char * query, ...) {
           j = 0;
           while (j < OPTION_NUMBER) {
              if ((*option[j])(query, positionQuery, opt)){
+#ifdef DEBUG_MOB
+stringPrintHelper("Option enabled: ");
+integerPrintHelper(j);
+#endif
                  ++positionQuery;
              }
              ++j;
