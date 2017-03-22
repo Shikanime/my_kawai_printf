@@ -77,7 +77,7 @@ void  hexadecimalCapitalPrintHelper(long long n){
   if (n > 15){
       bfn = n % 16;
       n /= 16;
-      hexadecimalPrintHelper(n);
+      hexadecimalCapitalPrintHelper(n);
   } else if (n > 0) {
       bfn = n % 16;
       n /= 16;
@@ -95,15 +95,15 @@ void	addressPrintHelper(long long n){
 }
 
 void	octalPrintHelper(int n){
-  int	bfn;
+  int m;
+  int i;
 
-  if (n >= 8){
-      bfn = n % 8;
-      n = n / 8;
-      octalPrintHelper(n);
-  } else if (n > 0) {
-      bfn = n % 8;
-      n = n / 8;
+  m = 0;
+  i = 1;
+  while (n != 0){
+    m += (n % 8) * i;
+    n /= 8;
+    i *= 10;
   }
-  charPrintHelper((char) (bfn + 48));
+  integerPrintHelper(m);
 }
