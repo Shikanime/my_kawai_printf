@@ -52,3 +52,40 @@ void  integerPrintHelper(int n){
     b /= 10;
   }
 }
+
+void  hexadecimalPrintHelper(int n){
+  int	bfn;
+
+  if (n > 15){
+      bfn = n % 16;
+      n /= 16;
+      hexadecimalPrintHelper(n);
+  } else if (n > 0) {
+      bfn = n % 16;
+      n /= 16;
+  }
+  if (bfn > 9){
+    charPrintHelper((char) (bfn + 87));
+  } else {
+    charPrintHelper((char) (bfn + 48));
+  }
+}
+
+void	addressPrintHelper(long long n){
+  charPrintHelper("0x");
+  hexadecimalPrintHelper(n);
+}
+
+void	octalPrintHelper(int n){
+  int	bfn;
+
+  if (n >= 8){
+      bfn = n % 8;
+      n = n / 8;
+      octalPrintHelper(n);
+  } else if (n > 0) {
+      bfn = n % 8;
+      n = n / 8;
+  }
+  charPrintHelper((char) (bfn + 48));
+}
