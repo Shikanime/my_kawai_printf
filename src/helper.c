@@ -72,7 +72,7 @@ void  hexadecimalPrintHelper(int n){
 }
 
 void	addressPrintHelper(long long n){
-  charPrintHelper("0x");
+  stringPrintHelper("0x");
   hexadecimalPrintHelper(n);
 }
 
