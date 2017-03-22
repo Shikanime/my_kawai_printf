@@ -71,6 +71,24 @@ void  hexadecimalPrintHelper(long long n){
   }
 }
 
+void  hexadecimalPrintHelper(long long n){
+  long long	bfn;
+
+  if (n > 15){
+      bfn = n % 16;
+      n /= 16;
+      hexadecimalPrintHelper(n);
+  } else if (n > 0) {
+      bfn = n % 16;
+      n /= 16;
+  }
+  if (bfn > 9){
+    charPrintHelper((char) (bfn + 55));
+  } else {
+    charPrintHelper((char) (bfn + 48));
+  }
+}
+
 void	addressPrintHelper(long long n){
   stringPrintHelper("0x");
   hexadecimalPrintHelper(n);
