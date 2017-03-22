@@ -21,7 +21,7 @@ void                my_printf(const char * query, ...) {
           // Options
           j = 0;
           while (j < OPTION_NUMBER) {
-             if ((*option[j])(query, positionQuery, &opt)){
+             if ((*option[j])(query, positionQuery, opt)){
                  j = OPTION_NUMBER;
              }
              ++j;
