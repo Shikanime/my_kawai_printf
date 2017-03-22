@@ -22,8 +22,11 @@ void escapePrint(va_list ap, int * opt){
 }
 
 void integerPrint(va_list ap, int * opt){
-  (void) opt;
-  integerPrintHelper(va_arg(ap, int));
+  if (opt[LenghtMod] = 1){
+    longPrint(ap, opt);
+  } else {
+    integerPrintHelper(va_arg(ap, int));
+  }
 }
 
 void longPrint(va_list ap, int * opt){
