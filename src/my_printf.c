@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-void                my_printf(char * query, ...) {
+void                my_printf(const char * query, ...) {
     unsigned int    positionQuery;
     unsigned int    j;
     long int        sizeQuery;
