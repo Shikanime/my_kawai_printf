@@ -113,6 +113,6 @@ void	octalPrintHelper(unsigned int n){
       n /= 8;
       i *= 10;
     }
-    integerPrintHelper((unsigned int) m);
+    integerPrintHelper((int) m);
   }
 }
