@@ -22,7 +22,7 @@ endif
  
 # (12): typical way to list files and build full paths
 # (4): list the sources, not the object files (nor includes)
-_SRCS := check.c helper.c option.c my_printf.c main.c
+_SRCS := check.c print.c option.c helper.c my_printf.c main.c
 
 SRCS := $(patsubst %, $(SRCDIR)/%, $(_SRCS))
 OBJS := $(patsubst %, $(OBJDIR)/%, $(_SRCS:c=o))
