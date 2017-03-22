@@ -16,6 +16,7 @@ void (*print[PROCESS_NUMBER])(va_list ap, int * opt) = {
 /* Local functions */
 
 void escapePrint(va_list ap, int * opt){
+  (void) ap;
   (void) opt;
   charPrintHelper('%');
 }
