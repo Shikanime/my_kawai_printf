@@ -71,7 +71,7 @@ void  hexadecimalPrintHelper(long long n){
   }
 }
 
-void  hexadecimalPrintHelper(long long n){
+void  hexadecimalCapitalPrintHelper(long long n){
   long long	bfn;
 
   if (n > 15){
