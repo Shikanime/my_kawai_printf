@@ -53,7 +53,7 @@ void  integerPrintHelper(int n){
     charPrintHelper('-');
     n *= -1;
   }
-  unsignedIntegerPrintHelper((unsigned int) n));
+  unsignedIntegerPrintHelper((unsigned int) n);
 }
 
 void  hexadecimalPrintHelper(long long n){
