@@ -15,7 +15,6 @@ void (*print[7])(va_list ap, int * opt) = {
 /* Local functions */
 
 void integerPrint(va_list ap, int * opt){
-  (void) ap;
   (void) opt;
   integerPrintHelper(va_arg(ap, int));
 }
@@ -26,7 +25,6 @@ void longPrint(va_list ap, int * opt){
 }
 
 void charPrint(va_list ap, int * opt){
-  (void) ap;
   (void) opt;
   charPrintHelper((char) va_arg(ap, int));
 }
