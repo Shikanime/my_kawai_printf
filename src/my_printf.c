@@ -30,7 +30,7 @@ void                my_printf(const char * query, ...) {
           // Process
           j = 0;
           while (j < PROCESS_NUMBER) {
-             if ((*process[j])(query, positionQuery)){
+             if ((*process[j])(query, positionQuery, ap, opt)){
                  j = PROCESS_NUMBER;
              }
              ++j;
