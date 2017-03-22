@@ -14,4 +14,3 @@ int main(int ac, char * av[]) {
 	my_printf("4 - %X\n", 42); 							/* unsigned hexadecimal */
 	my_printf("5 - %d%%\n", 42);
 }
-}
