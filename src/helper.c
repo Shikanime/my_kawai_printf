@@ -56,8 +56,8 @@ void  integerPrintHelper(int n){
   unsignedIntegerPrintHelper((unsigned int) n);
 }
 
-void  hexadecimalPrintHelper(unsigned long long n){
-  unsigned long long bfn;
+void  hexadecimalPrintHelper(unsigned int n){
+  unsigned int bfn;
 
   if (n >= 16){
     bfn = n % 16;
@@ -74,8 +74,8 @@ void  hexadecimalPrintHelper(unsigned long long n){
   }
 }
 
-void  hexadecimalCapitalPrintHelper(unsigned long long n){
-  unsigned long long bfn;
+void  hexadecimalCapitalPrintHelper(unsigned int n){
+  unsigned int bfn;
 
   if (n >= 16){
       bfn = n % 16;
@@ -92,7 +92,7 @@ void  hexadecimalCapitalPrintHelper(unsigned long long n){
   }
 }
 
-void	addressPrintHelper(unsigned long long n){
+void	addressPrintHelper(unsigned int n){
   stringPrintHelper("0x");
   hexadecimalPrintHelper(n);
 }

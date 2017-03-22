@@ -60,7 +60,7 @@ int stringProcess(const char * query, int n, int * opt, va_list * ap){
 int pointerProcess(const char * query, int n, int * opt, va_list * ap){
   (void) opt;
   if (query[n] == 'p'){
-    addressPrintHelper(va_arg(*ap, unsigned long long));
+    addressPrintHelper(va_arg(*ap, unsigned int));
     return 1;
   }
   return 0;
@@ -69,10 +69,10 @@ int pointerProcess(const char * query, int n, int * opt, va_list * ap){
 int hexadecimalProcess(const char * query, int n, int * opt, va_list * ap){
   (void) opt;
   if (query[n] == 'x'){
-    hexadecimalPrintHelper(va_arg(*ap, unsigned long long));
+    hexadecimalPrintHelper(va_arg(*ap, unsigned int));
     return 1; 
   } else if (query[n] == 'X') {
-    hexadecimalCapitalPrintHelper(va_arg(*ap, unsigned long long));
+    hexadecimalCapitalPrintHelper(va_arg(*ap, unsigned int));
     return 1; 
   }
   return 0;
