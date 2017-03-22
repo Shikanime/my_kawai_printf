@@ -56,13 +56,13 @@ void  integerPrintHelper(int n){
   unsignedIntegerPrintHelper((int) n);
 }
 
-void  unsignedHexadecimalPrintHelper(long long n){
+void  HexadecimalPrintHelper(long long n){
   long long bfn;
 
   if (n >= 16){
       bfn = n % 16;
       n /= 16;
-      unsignedHexadecimalPrintHelper(n);
+      HexadecimalPrintHelper(n);
   } else if (n > 0){
       bfn = n % 16;
       n /= 16;
@@ -74,13 +74,13 @@ void  unsignedHexadecimalPrintHelper(long long n){
   }
 }
 
-void  unsignedHexadecimalCapitalPrintHelper(long long n){
+void  HexadecimalCapitalPrintHelper(long long n){
   long long bfn;
 
   if (n >= 16){
       bfn = n % 16;
       n /= 16;
-      unsignedHexadecimalPrintHelper(n);
+      HexadecimalPrintHelper(n);
   } else if (n > 0){
       bfn = n % 16;
       n /= 16;
@@ -94,7 +94,7 @@ void  unsignedHexadecimalCapitalPrintHelper(long long n){
 
 void	addressPrintHelper(long long n){
   stringPrintHelper("0x");
-  unsignedHexadecimalPrintHelper(n);
+  HexadecimalPrintHelper(n);
 }
 
 void	signedOctalPrintHelper(int n){
