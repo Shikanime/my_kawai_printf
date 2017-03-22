@@ -9,7 +9,8 @@ int (*process[PROCESS_NUMBER])(const char * query, unsigned int n, va_list ap, i
    stringProcess,
    pointerProcess,
    hexadecimalProcess,
-   octalProcess
+   octalProcess,
+   unsignedInteger
 };
 
 /* local functions */
@@ -81,6 +82,15 @@ int octalProcess(const char * query, unsigned int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'o'){
     octalPrintHelper(va_arg(ap, int));
+    return 1; 
+  }
+  return 0;
+}
+
+int unsignedIntegerProcess(const char * query, unsigned int n, va_list ap, int * opt){
+  (void) opt;
+  if (query[n] == 'u'){
+    unsignedIntegerPrintHelper(va_arg(ap, unsigned int));
     return 1; 
   }
   return 0;

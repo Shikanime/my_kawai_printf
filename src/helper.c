@@ -27,16 +27,9 @@ void      stringPrintHelper(const char * s){
   }
 }
 
-void  integerPrintHelper(int n){
-  int	b;
+void  unsignedIntegerPrintHelper(unsigned int n){
+  unsigned int	b;
 
-  if (n == -2147483647) {
-    stringPrintHelper((char *) ("-2147483647"));
-  }
-  if (n < 0) {
-    charPrintHelper('-');
-    n *= -1;
-  }
   if (n < 10) {
     charPrintHelper((char) (n + 48));
     return;
@@ -52,6 +45,17 @@ void  integerPrintHelper(int n){
   }
 }
 
+void  integerPrintHelper(int n){
+  if (n == -2147483647){
+    stringPrintHelper((char *) ("-2147483647"));
+  }
+  if (n < 0) {
+    charPrintHelper('-');
+    n *= -1;
+  }
+  unsignedIntegerPrintHelper((unsigned int) n));
+}
+
 void  hexadecimalPrintHelper(long long n){
   long long	bfn;
 
@@ -59,7 +63,7 @@ void  hexadecimalPrintHelper(long long n){
       bfn = n % 16;
       n /= 16;
       hexadecimalPrintHelper(n);
-  } else if (n > 0) {
+  } else if (n > 0){
       bfn = n % 16;
       n /= 16;
   }
@@ -77,7 +81,7 @@ void  hexadecimalCapitalPrintHelper(long long n){
       bfn = n % 16;
       n /= 16;
       hexadecimalCapitalPrintHelper(n);
-  } else if (n > 0) {
+  } else if (n > 0){
       bfn = n % 16;
       n /= 16;
   }

@@ -11,5 +11,6 @@ int stringProcess               (const char * query, unsigned int n, va_list ap,
 int pointerProcess              (const char * query, unsigned int n, va_list ap, int * opt);
 int hexadecimalProcess          (const char * query, unsigned int n, va_list ap, int * opt);
 int octalProcess                (const char * query, unsigned int n, va_list ap, int * opt);
+int unsignedIntegerProcess      (const char * query, unsigned int n, va_list ap, int * opt);
 
 #endif //MY_PRINTF_RULLES_PROCESS
