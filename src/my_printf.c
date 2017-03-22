@@ -28,6 +28,7 @@ void                my_printf(const char * query, ...) {
                  (*print[j])(ap, opt);
                  j = 8;
              }
+             ++j;
           }
         } else {
             charPrintHelper(query[positionQuery]);
