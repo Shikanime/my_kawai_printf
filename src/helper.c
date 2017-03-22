@@ -53,7 +53,7 @@ void  integerPrintHelper(int n){
   }
 }
 
-void  hexadecimalPrintHelper(int n){
+void  hexadecimalPrintHelper(long long n){
   int	bfn;
 
   if (n > 15){
