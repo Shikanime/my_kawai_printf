@@ -23,7 +23,7 @@ void                my_printf(const char * query, ...) {
 
           // Process
           j = 0;
-          while (j < 7) {
+          while (j < 8) {
              if ((*check[j])(query, positionQuery)){
                  (*print[j])(ap, opt);
              }
