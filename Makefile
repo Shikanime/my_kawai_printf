@@ -7,7 +7,6 @@ CFLAGS ?= -std=gnu99 -g $(WARNINGS)
 
 OBJDIR := obj
 SRCDIR := src
-OUTPUT := my_printf
 
 ifeq ($(VERBOSE), 1)
     SILENCER := 
@@ -23,7 +22,7 @@ SRCF := process.c \
 		option.c \
 		helper.c \
 		my_printf.c \
-		main.c
+		test.c
 
 SRCS := $(patsubst %, $(SRCDIR)/%, $(SRCF))
 OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=o))
@@ -37,7 +36,7 @@ createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
 main: $(OBJS) 
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $(OUTPUT)
+	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^ 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $< 
