@@ -5,11 +5,9 @@
 void (*print[PROCESS_NUMBER])(va_list ap, int * opt) = {
    escapePrint,
    integerPrint,
-   longPrint,
    charPrint,
    stringPrint,
    pointerPrint,
-   shortPrint,
    hexadecimalPrint
 };
 
@@ -22,16 +20,13 @@ void escapePrint(va_list ap, int * opt){
 }
 
 void integerPrint(va_list ap, int * opt){
-  if (opt[lenghtMod] == 1){
-    longPrint(ap, opt);
+  if (opt[lenghtMod] == longIntLenght){
+    integerPrintHelper(ap, opt);
+  } else if (opt[lenghtMod] == shortIntLenght){
+    integerPrintHelper(ap, opt);
   } else {
     integerPrintHelper(va_arg(ap, int));
   }
-}
-
-void longPrint(va_list ap, int * opt){
-  (void) opt;
-  integerPrintHelper(va_arg(ap, int)); // TODO double modif
 }
 
 void charPrint(va_list ap, int * opt){
@@ -45,11 +40,6 @@ void stringPrint(va_list ap, int * opt){
 }
 
 void pointerPrint(va_list ap, int * opt){
-  (void) ap;
-  (void) opt;
-}
-
-void shortPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
 }

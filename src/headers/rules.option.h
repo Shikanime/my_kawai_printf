@@ -11,6 +11,12 @@ enum {
     typeMod
 };
 
+enum {
+    longIntLenght,
+    shortIntLenght,
+    longDoubleLenght
+}
+
 int (*option[OPTION_NUMBER])(const char * query, unsigned int n, int * opt);
 int longOption(const char * query, unsigned int n, int * opt);
 

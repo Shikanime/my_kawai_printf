@@ -2,14 +2,12 @@
 
 /* Usable functions */
 
-int (*check[PROCESS_NUMBER])(const char * query, unsigned int n) = {
+int (*check[CHECK_NUMBER])(const char * query, unsigned int n) = {
    escapeCheck,
    integerCheck,
-   longCheck,
    charCheck,
    stringCheck,
    pointerCheck,
-   shortCheck,
    hexadecimalCheck
 };
 
@@ -23,12 +21,6 @@ int escapeCheck(const char * query, unsigned int n){
 
 int integerCheck(const char * query, unsigned int n){
   if (query[n] == 'd')
-    return 1;
-  return 0;
-}
-
-int longCheck(const char * query, unsigned int n){
-  if (query[n] == 'l' && query[n + 1] == 'd')
     return 1;
   return 0;
 }
@@ -47,12 +39,6 @@ int stringCheck(const char * query, unsigned int n){
 
 int pointerCheck(const char * query, unsigned int n){
   if (query[n] == 'p')
-    return 1;
-  return 0;
-}
-
-int shortCheck(const char * query, unsigned int n){
-  if (query[n] == 'h' && query[n + 1] == 'd')
     return 1;
   return 0;
 }
