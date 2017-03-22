@@ -59,41 +59,27 @@ void  integerPrintHelper(int n){
 void  hexadecimalPrintHelper(unsigned long long n){
   unsigned long long bfn;
 
-  if (n > 0){
-    if (n >= 16){
-      bfn = n % 16;
-      n /= 16;
-      hexadecimalPrintHelper(n);
-    } else if (n > 0){
-        bfn = n % 16;
-        n /= 16;
-    }
-    if (bfn > 9){
-      charPrintHelper((char) (bfn + 87));
-    } else {
+	while (n != 0){
+		bfn = n % 16;
+		if (bfn < 10)
       charPrintHelper((char) (bfn + 48));
-    }
-  }
+    else
+      charPrintHelper((char) (bfn + 87));
+		n = n / 16;
+	}
 }
 
 void  hexadecimalCapitalPrintHelper(unsigned long long n){
   unsigned long long bfn;
 
-  if (n > 0){
-    if (n >= 16){
-        bfn = n % 16;
-        n /= 16;
-        hexadecimalPrintHelper(n);
-    } else if (n > 0){
-        bfn = n % 16;
-        n /= 16;
-    }
-    if (bfn > 9){
-      charPrintHelper((char) (bfn + 55));
-    } else {
+	while (n != 0){
+		bfn = n % 16;
+		if (bfn < 10)
       charPrintHelper((char) (bfn + 48));
-    }
-  }
+    else
+      charPrintHelper((char) (bfn + 55));
+		n = n / 16;
+	}
 }
 
 void	addressPrintHelper(unsigned long long n){
@@ -105,14 +91,12 @@ void	octalPrintHelper(unsigned int n){
   unsigned int m;
   unsigned int i;
 
-  if (n > 0){
-    m = 0;
-    i = 1;
-    while (n != 0){
-      m += (n % 8) * i;
-      n /= 8;
-      i *= 10;
-    }
-    integerPrintHelper((int) m);
+  m = 0;
+  i = 1;
+  while (n != 0){
+    m += (n % 8) * i;
+    n /= 8;
+    i *= 10;
   }
+  integerPrintHelper((int) m);
 }

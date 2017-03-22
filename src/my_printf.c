@@ -42,7 +42,7 @@ void    optionsMachina(const char * query, int * positionQry, int * optionsQry){
 
     i = 0;
     while (i < OPTION_NUMBER){
-        if ((*option[i])(query, *positionQry, optionsQry))
+        if ((*option[i])(query, positionQry, optionsQry))
             ++positionQry;
         ++i;
     }
