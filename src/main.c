@@ -9,9 +9,9 @@ int main(int ac, char * av[]) {
     my_printf("Escape: %%");
     my_printf("Long: %hd", 444);
     my_printf("Char: %c", 'c');
-    my_printf("String: %s", "cest une string");
     my_printf("Hex: %x", 3939);
     my_printf("Octal: %x", 139);
+    my_printf("String: %s", "cest une string");
 
     // All
     my_printf("Integer: %d | Escape: %% | Long: %hd | Char: %c | String: %s", 3, 444, 'c', "cest une string");
