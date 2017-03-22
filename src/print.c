@@ -26,7 +26,7 @@ void longPrint(va_list ap, int * opt){
 
 void charPrint(va_list ap, int * opt){
   (void) opt;
-  charPrintHelper(va_arg(ap, char));
+  charPrintHelper(va_arg(ap, int));
 }
 
 void stringPrint(va_list ap, int * opt){
