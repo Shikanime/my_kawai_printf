@@ -4,17 +4,7 @@ int main(int ac, char * av[]) {
     (void) ac;
     (void) av;
 
-    int integerTest;
-    long longTest;
-    char charTest;
-    char * stringTest;
-
-    integerTest = 666;
-    longTest = 3000000000;
-    charTest = 'a';
-    stringTest = "Mec ca marche aussi";
-    
-    my_printf("Integer: %d \nLong: %ld \nChar: %c\n String: %s\n Empty: %\n", integerTest, longTest, charTest, stringTest);
+    my_printf("Integer: %d \nLong: %ld \nChar: %c\n String: %s\n Empty: %\n", 666, 3000000000, 'a', "ca marche ici");
 
     return 0;
 }
