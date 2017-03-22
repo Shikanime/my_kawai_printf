@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-int (*check[PROCESS_NUMBER])(const char * query, unsigned int n, va_list ap, int * opt) = {
+int (*process[PROCESS_NUMBER])(const char * query, unsigned int n, va_list ap, int * opt) = {
    escapeProcess,
    integerProcess,
    charProcess,
@@ -24,7 +24,6 @@ int escapeProcess(const char * query, unsigned int n, va_list ap, int * opt){
 }
 
 int integerProcess(const char * query, unsigned int n, va_list ap, int * opt){
-  stringPrintHelper("test");
   if (query[n] == 'd'){
     if (opt[lenghtMod] == longIntLenght){
       integerPrintHelper(va_arg(ap, int)); // TO DO
