@@ -1,4 +1,4 @@
-#include "loader.h"
+#include "headers/loader.h"
 
 /* Usable functions */
 
@@ -69,10 +69,10 @@ int pointerProcess(const char * query, int n, va_list ap, int * opt){
 int hexadecimalProcess(const char * query, int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 'x'){
-    HexadecimalPrintHelper(va_arg(ap, long long));
+    hexadecimalPrintHelper(va_arg(ap, long long));
     return 1; 
   } else if (query[n] == 'X') {
-    HexadecimalCapitalPrintHelper(va_arg(ap, long long));
+    hexadecimalCapitalPrintHelper(va_arg(ap, long long));
     return 1; 
   }
   return 0;
