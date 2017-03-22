@@ -20,7 +20,7 @@ void                my_printf(const char * query, ...) {
 
           // Options
           // TODO
-
+charPrintHelper(query[positionQuery]);
           // Process
           j = 0;
           while (j < 8) {
