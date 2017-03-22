@@ -2,7 +2,7 @@
 
 /* Usable functions */
 
-void (*print[7])(char * query, va_list ap, int * opt) = {
+void (*print[7])(va_list ap, int * opt) = {
    integerPrint,
    longPrint,
    stringPrint,
@@ -14,47 +14,40 @@ void (*print[7])(char * query, va_list ap, int * opt) = {
 
 /* Local functions */
 
-void integerPrint(char * query, va_list ap, int * opt){
+void integerPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
   integerPrintHelper(va_arg(ap, int));
 }
 
-void longPrint(char * query, va_list ap, int * opt){
+void longPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
 }
 
-void charPrint(char * query, va_list ap, int * opt){
+void charPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
-  charPrintHelper(va_arg(ap, char));
+  charPrintHelper(va_arg(ap, void *));
 }
 
-void stringPrint(char * query, va_list ap, int * opt){
+void stringPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
   stringPrintHelper(va_arg(ap, char *));
 }
 
-void pointerPrint(char * query, va_list ap, int * opt){
+void pointerPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
 }
 
-void shortPrint(char * query, va_list ap, int * opt){
+void shortPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
 }
 
-void hexadecimalPrint(char * query, va_list ap, int * opt){
+void hexadecimalPrint(va_list ap, int * opt){
   (void) ap;
   (void) opt;
-  (void) query;
 }
