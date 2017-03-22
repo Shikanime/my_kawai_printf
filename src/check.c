@@ -5,7 +5,7 @@
 int (*check[7])(const char * query, unsigned int n) = {
    integerCheck,
    longCheck,
-   stringCheck,
+   charCheck,
    stringCheck,
    pointerCheck,
    shortCheck,

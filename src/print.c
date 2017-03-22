@@ -5,7 +5,7 @@
 void (*print[7])(va_list ap, int * opt) = {
    integerPrint,
    longPrint,
-   stringPrint,
+   charPrint,
    stringPrint,
    pointerPrint,
    shortPrint,
