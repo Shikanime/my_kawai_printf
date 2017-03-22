@@ -8,7 +8,7 @@ void        integerPrintHelper                      (int n);
 void        unsignedIntegerPrintHelper              (unsigned int n);
 void	    addressPrintHelper                      (unsigned long long n);
 void        unsignedHexadecimalPrintHelper          (unsigned long long n);
-void        unsignedHexadecimalCapitalPrintHelper   (unsigned long long n);
+void        unsignedHexadecimalCapitalPrintHelper   (long long n);
 void	    unsignedOctalPrintHelper                (signed int n);
 
 #endif //MY_PRINTF_APP_HELPER
