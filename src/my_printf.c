@@ -2,14 +2,14 @@
 
 /* Usable functions */
 
-void                my_printf(char * query, ...) {
+void                my_printf(const char * query, ...) {
     unsigned int    positionQuery;
     unsigned int    j;
-    long int        sizeQuery;
+    unsigned long int        sizeQuery;
     int             opt[5];
     va_list         ap;
 
-    sizeQuery = stringLengthHelper(query);
+    sizeQuery = (unsigned int)stringLengthHelper((char *)query);
 
     va_start(ap, query);
 
@@ -24,8 +24,8 @@ void                my_printf(char * query, ...) {
           // Process
           j = 0;
           while (j < 7) {
-             if ((*check[j])(query, positionQuery) == 1){
-                 (*print[j])(query, ap, opt);
+             if ((*check[j])((char *)query, positionQuery) == 1){
+                 (*print[j])((char *)query, ap, opt);
              }
              ++j;
           }

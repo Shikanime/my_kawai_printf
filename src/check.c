@@ -27,7 +27,7 @@ int longCheck(const char * query, unsigned int n){
 }
 
 int charCheck(const char * query, unsigned int n){
-  if (query[n] == 'c' || (query[n]))
+  if (query[n] == 'c')
     return 1;
   return 0;
 }
