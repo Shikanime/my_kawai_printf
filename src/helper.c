@@ -6,7 +6,7 @@ void  charPrintHelper(char c){
   write(1, &c, 1);
 }
 
-long int  stringLengthHelper(char * s){
+long int  stringLengthHelper(const char * s){
   char *  bfs;
 
   bfs = s;
@@ -17,7 +17,7 @@ long int  stringLengthHelper(char * s){
   return bfs - s;
 }
 
-void      stringPrintHelper(char * s){
+void      stringPrintHelper(const char * s){
   char *  bfs;
 
   bfs = s;
