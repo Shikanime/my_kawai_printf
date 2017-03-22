@@ -40,7 +40,7 @@ int integerProcess(const char * query, unsigned int n, va_list ap, int * opt){
 
 int charProcess(const char * query, unsigned int n, va_list ap, int * opt){
   (void) opt;
-  if (query[n] == 'c' || (query[n])){
+  if (query[n] == 'c'){
     charPrintHelper((char) va_arg(ap, int));
     return 1;
   }
