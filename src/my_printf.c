@@ -23,7 +23,6 @@ void                my_printf(const char * query, ...) {
           while (j < OPTION_NUMBER) {
              if ((*option[j])(query, positionQuery, opt)){
                  ++positionQuery;
-                 j = OPTION_NUMBER;
              }
              ++j;
           }
@@ -31,8 +30,7 @@ void                my_printf(const char * query, ...) {
           // Process
           j = 0;
           while (j < PROCESS_NUMBER) {
-             if ((*check[j])(query, positionQuery)){
-                 (*print[j])(ap, opt);
+             if ((*process[j])(query, positionQuery)){
                  j = PROCESS_NUMBER;
              }
              ++j;

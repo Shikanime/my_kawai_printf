@@ -13,9 +13,8 @@
 /* FILES */
 
 // Rules
-#include "headers/rules.check.h"
+#include "headers/rules.process.h"
 #include "headers/rules.option.h"
-#include "headers/rules.print.h"
 
 // Main
 #include "headers/app.my_printf.h"
