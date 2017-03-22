@@ -98,8 +98,8 @@ void	addressPrintHelper(unsigned long long n){
 }
 
 void	unsignedOctalPrintHelper(signed int n){
-  unsigned int m;
-  int i;
+  signed int m;
+  signed int i;
 
   m = 0;
   i = 1;
