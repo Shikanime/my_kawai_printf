@@ -11,6 +11,7 @@ int main(int ac, char * av[]) {
     // VALIDATED my_printf("Char: %c", 'c');
     my_printf("Hex: %x", 3939);
     my_printf("Octal: %o", 139);
+    my_printf("Octal: %o", 1);
     my_printf("String: %s", "cest une string");
 
     // All
