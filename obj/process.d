@@ -1,4 +1,4 @@
-obj/my_printf.o: src/my_printf.c src/headers/loader.h \
+obj/process.o: src/process.c src/headers/loader.h \
  src/headers/rules.process.h src/headers/rules.option.h \
  src/headers/app.my_printf.h src/headers/app.helper.h
 

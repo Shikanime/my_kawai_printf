@@ -1,14 +1,12 @@
-obj/option.o: src/option.c src/loader.h src/headers/rules.check.h \
- src/headers/rules.option.h src/headers/rules.print.h \
+obj/option.o: src/option.c src/headers/loader.h \
+ src/headers/rules.process.h src/headers/rules.option.h \
  src/headers/app.my_printf.h src/headers/app.helper.h
 
-src/loader.h:
+src/headers/loader.h:
 
-src/headers/rules.check.h:
+src/headers/rules.process.h:
 
 src/headers/rules.option.h:
-
-src/headers/rules.print.h:
 
 src/headers/app.my_printf.h:
 
