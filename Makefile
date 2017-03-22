@@ -37,17 +37,17 @@ createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
 main: $(OBJS) 
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^ 
+	$(SILENCER)$(CC) $(CFLAGS) -o $@ $(OUTPUT)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $< 
  
 clean:
-	$(SILENCER)$(RM) -f *~ core $(OUTPUT)
+	$(SILENCER)$(RM) -f *~ core main
 	$(SILENCER)$(RM) -r $(OBJDIR)
 
 fclean: clean
-	$(SILENCER)$(RM) -r $(OUTPUT)
+	$(SILENCER)$(RM) -r main
 	$(SILENCER)$(RM) -r *.so
 	$(SILENCER)$(RM) a.out
 
