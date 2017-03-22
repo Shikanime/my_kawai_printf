@@ -18,9 +18,12 @@ long int  stringLengthHelper(const char * s){
 }
 
 void      stringPrintHelper(const char * s){
-  while (*s != '\0'){
-    charPrintHelper(*s);
-    ++s;
+  const char *  bfs;
+
+  bfs = s;
+  while (*bfs != '\0'){
+    charPrintHelper(*bfs);
+    ++bfs;
   }
 }
 
