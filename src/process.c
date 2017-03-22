@@ -72,7 +72,7 @@ int hexadecimalProcess(const char * query, unsigned int n, va_list ap, int * opt
     unsignedHexadecimalPrintHelper(va_arg(ap, unsigned long long));
     return 1; 
   } else if (query[n] == 'X') {
-    unsignedHexadecimalCapitalPrintHelper(va_arg(ap, unsigned long long));
+    unsignedHexadecimalCapitalPrintHelper(va_arg(ap, long long));
     return 1; 
   }
   return 0;
