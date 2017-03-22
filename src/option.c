@@ -3,8 +3,8 @@
 /* Usable functions */
 
 int (*option[OPTION_NUMBER])(const char * query, unsigned int n, int ** opt) = {
-    longOption,
-}
+    longOption
+};
 
 /* Local functions */
 
