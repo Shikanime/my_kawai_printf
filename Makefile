@@ -27,7 +27,7 @@ SRCF := rules.process.c \
 SRCS := $(patsubst %, $(SRCDIR)/%, $(SRCF))
 OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=o))
 
-CFLAGS += -MMD -MP 
+CFLAGS += -MMD -MP
 DEPS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=d))
 
 all: main
@@ -42,10 +42,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
 
 my_printf_static: $(OBJS)
-	$(SILENCER)$(CC) $(CFLAGS) -static -L. -llibmy_printf_phetsi_w -o $@ $^ 
+	$(SILENCER)$(AR) rcs libmy_printf_phetsi_w.a -o $^
 
 my_printf_dynamic: $(OBJS)
-	$(SILENCER)$(CC) $(CFLAGS) -shared -Wl,-soname,libmy_printf_phetsi_w.so -o $@ $^ 
+	$(SILENCER)$(GCC) libmy_printf_phetsi_w.so -o $^ # TODO
 
 clean:
 	$(SILENCER)$(RM) -f *~ core main
