@@ -6,12 +6,12 @@ int main(int ac, char * av[]) {
 
     int integerTest;
     long longTest;
-    char * stringTest;
+    char stringTest[20] = "bite";
 
     integerTest = 666;
     longTest = 3000000000;
     
-    my_printf("Integer: %d \nLong: %ld \nChar: %c\n Empty: %\n", integerTest, longTest, stringTest);
+    my_printf("Integer: %d \nLong: %ld \nChar: %s\n Empty: %\n", integerTest, longTest, stringTest);
 
     return 0;
 }
