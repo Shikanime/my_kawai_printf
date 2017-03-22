@@ -57,7 +57,7 @@ void  integerPrintHelper(int n){
 }
 
 void  unsignedHexadecimalPrintHelper(unsigned long long n){
-  unsigned long long	bfn;
+  unsigned long long bfn;
 
   if (n >= 16){
       bfn = n % 16;
@@ -74,21 +74,15 @@ void  unsignedHexadecimalPrintHelper(unsigned long long n){
   }
 }
 
-void  unsignedHexadecimalCapitalPrintHelper(unsigned long long n){
-  unsigned long long	bfn;
+void            uppercaseHelper(){
+  unsigned int  i;
 
-  if (n >= 16){
-      bfn = n % 16;
-      n /= 16;
-      unsignedHexadecimalCapitalPrintHelper(n);
-  } else if (n > 0){
-      bfn = n % 16;
-      n /= 16;
-  }
-  if (bfn > 9){
-    charPrintHelper((char) (bfn + 55));
-  } else {
-    charPrintHelper((char) (bfn + 48));
+  i = 0;
+  while (i < 49){
+    if ((str[i] > 96) && (str[i] < 123)){
+      str[i]=str[i]-32;
+    }
+    ++i;
   }
 }
 
