@@ -59,36 +59,40 @@ void  integerPrintHelper(int n){
 void  HexadecimalPrintHelper(long long n){
   long long bfn;
 
-  if (n >= 16){
+  if (n > 0){
+    if (n >= 16){
       bfn = n % 16;
       n /= 16;
       HexadecimalPrintHelper(n);
-  } else if (n > 0){
-      bfn = n % 16;
-      n /= 16;
-  }
-  if (bfn > 9){
-    charPrintHelper((char) (bfn + 87));
-  } else {
-    charPrintHelper((char) (bfn + 48));
+    } else if (n > 0){
+        bfn = n % 16;
+        n /= 16;
+    }
+    if (bfn > 9){
+      charPrintHelper((char) (bfn + 87));
+    } else {
+      charPrintHelper((char) (bfn + 48));
+    }
   }
 }
 
 void  HexadecimalCapitalPrintHelper(long long n){
   long long bfn;
 
-  if (n >= 16){
-      bfn = n % 16;
-      n /= 16;
-      HexadecimalPrintHelper(n);
-  } else if (n > 0){
-      bfn = n % 16;
-      n /= 16;
-  }
-  if (bfn > 9){
-    charPrintHelper((char) (bfn + 55));
-  } else {
-    charPrintHelper((char) (bfn + 48));
+  if (n > 0){
+    if (n >= 16){
+        bfn = n % 16;
+        n /= 16;
+        HexadecimalPrintHelper(n);
+    } else if (n > 0){
+        bfn = n % 16;
+        n /= 16;
+    }
+    if (bfn > 9){
+      charPrintHelper((char) (bfn + 55));
+    } else {
+      charPrintHelper((char) (bfn + 48));
+    }
   }
 }
 
@@ -101,12 +105,14 @@ void	signedOctalPrintHelper(int n){
   int m;
   int i;
 
-  m = 0;
-  i = 1;
-  while (n != 0){
-    m += (n % 8) * i;
-    n /= 8;
-    i *= 10;
+  if (n > 0){
+    m = 0;
+    i = 1;
+    while (n != 0){
+      m += (n % 8) * i;
+      n /= 8;
+      i *= 10;
+    }
+    integerPrintHelper((signed int) m);
   }
-  integerPrintHelper((signed int) m);
 }
