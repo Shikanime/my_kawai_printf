@@ -1,45 +1,59 @@
-#include "loader.h"
+#include "headers/loader.h"
+
+/* Encapsulated protypes */
+
+void    optionsMachina(const char * query, int positionQry, int * optionsQry, va_list ap);
+void    processMachina(const char * query, int positionQry, int * optionsQry, va_list ap);
 
 /* Usable functions */
 
-void                my_printf(const char * query, ...) {
-    int    positionQuery;
-    int    j;
-    long int        sizeQuery;
-    int             opt[5];
-    va_list         ap;
-
-    sizeQuery = stringLengthHelper(query);
+void        my_printf(const char * query, ...) {
+    va_list ap;
 
     va_start(ap, query);
-
-    positionQuery = 0;
-    while (positionQuery < sizeQuery) {
-        if (query[positionQuery] == '%' && query[positionQuery + 1] != '\0') {
-          ++positionQuery;
-
-          // Options
-          j = 0;
-          while (j < OPTION_NUMBER) {
-             if ((*option[j])(query, positionQuery, opt)){
-                 ++positionQuery;
-             }
-             ++j;
-          }
-
-          // Process
-          j = 0;
-          while (j < PROCESS_NUMBER) {
-             if ((*process[j])(query, positionQuery, ap, opt)){
-                 j = PROCESS_NUMBER;
-             }
-             ++j;
-          }
-        } else {
-            charPrintHelper(query[positionQuery]);
-        }
-        ++positionQuery;
-    }
-
+    machina(query, ap, optionsQry);
     va_end(ap);
+}
+
+/* Encapsulated functions */
+
+void            machina(const char * query int * optionsQry, va_list ap){
+    int         positionQry;
+    long int    sizeQry;
+    int         optionsQry[OPTION_NUMBER];
+
+    sizeQry = stringLengthHelper(query);
+
+    positionQry = 0;
+    while (positionQuery < sizeQry) {
+        if (query[positionQry] == '%' && query[positionQuery + 1] != '\0') {
+          ++positionQry;
+          optionsMachina(query, &positionQry, ap, optionsQry);
+          processMachina(query, &positionQry, ap, optionsQry);
+        } else
+            charPrintHelper(query[positionQry]);
+        ++positionQry;
+    }
+}
+
+void    optionsMachina(const char * query, int * positionQry, int * optionsQry, va_list ap){
+    int i;
+
+    i = 0;
+    while (i < OPTION_NUMBER){
+        if ((*option[i])(query, positionQry, optionsQry))
+            ++positionQry;
+        ++i;
+    }
+}
+
+void    processMachina(const char * query, int * positionQry, int * optionsQry, va_list ap){
+    int i;
+
+    i = 0;
+    while (i < PROCESS_NUMBER){
+        if ((*process[i])(query, positionQry, ap, optionsQry))
+            i = PROCESS_NUMBER;
+        ++i;
+    }
 }
