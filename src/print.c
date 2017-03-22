@@ -39,7 +39,7 @@ void charPrint(va_list ap, int * opt){
 
 void stringPrint(va_list ap, int * opt){
   (void) opt;
-  printf("%s", va_arg(ap, char*);
+  printf("%s", va_arg(ap, char*));
 //  stringPrintHelper(va_arg(ap, char *));
 }
 
