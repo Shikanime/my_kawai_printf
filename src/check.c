@@ -2,7 +2,8 @@
 
 /* Usable functions */
 
-int (*check[7])(const char * query, unsigned int n) = {
+int (*check[PROCESS_NUMBER])(const char * query, unsigned int n) = {
+   espaceCheck,
    integerCheck,
    longCheck,
    charCheck,
@@ -13,6 +14,12 @@ int (*check[7])(const char * query, unsigned int n) = {
 };
 
 /* local functions */
+
+int escapeCheck(const char * query, unsigned int n){
+  if (query[n] == '%')
+    return 1;
+  return 0;
+}
 
 int integerCheck(const char * query, unsigned int n){
   if (query[n] == 'd')

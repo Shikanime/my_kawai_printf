@@ -2,7 +2,8 @@
 
 /* Usable functions */
 
-void (*print[7])(va_list ap, int * opt) = {
+void (*print[PROCESS_NUMBER])(va_list ap, int * opt) = {
+   escapePrint,
    integerPrint,
    longPrint,
    charPrint,
@@ -13,6 +14,11 @@ void (*print[7])(va_list ap, int * opt) = {
 };
 
 /* Local functions */
+
+void escapePrint(va_list ap, int * opt){
+  (void) opt;
+  charPrintHelper(va_arg(ap, int));
+}
 
 void integerPrint(va_list ap, int * opt){
   (void) opt;
