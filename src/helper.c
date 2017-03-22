@@ -32,7 +32,6 @@ void  integerPrintHelper(int n){
 
   if (n == -2147483647) {
     stringPrintHelper((char *) ("-2147483647"));
-    return;
   }
   if (n < 0) {
     charPrintHelper('-');
@@ -45,7 +44,7 @@ void  integerPrintHelper(int n){
   b = 1;
   while (b <= (n / 10)){
     b *= 10;
-  } 
+  }
   while (b >= 1) {
     charPrintHelper((char) (n / b + '0'));
     n %= b;
@@ -56,7 +55,7 @@ void  integerPrintHelper(int n){
 void  hexadecimalPrintHelper(long long n){
   long long	bfn;
 
-  if (n > 15){
+  if (n >= 16){
       bfn = n % 16;
       n /= 16;
       hexadecimalPrintHelper(n);
@@ -74,7 +73,7 @@ void  hexadecimalPrintHelper(long long n){
 void  hexadecimalCapitalPrintHelper(long long n){
   long long	bfn;
 
-  if (n > 15){
+  if (n >= 16){
       bfn = n % 16;
       n /= 16;
       hexadecimalCapitalPrintHelper(n);
