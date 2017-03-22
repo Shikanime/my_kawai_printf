@@ -49,8 +49,7 @@ int charProcess(const char * query, unsigned int n, va_list ap, int * opt){
 int stringProcess(const char * query, unsigned int n, va_list ap, int * opt){
   (void) opt;
   if (query[n] == 's'){
-stringPrintHelper("ici");
-    stringPrintHelper(va_arg(ap, char *));
+    stringPrintHelper(va_arg(ap, void *));
     return 1;
   }
   return 0;
