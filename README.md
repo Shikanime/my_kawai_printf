@@ -1,2 +1,2 @@
-# print
-That's basically a printf remake
+# My Kawai Printf
+That's basically a printf remake.
