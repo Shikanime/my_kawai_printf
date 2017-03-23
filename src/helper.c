@@ -88,9 +88,28 @@ void            hexadecimalCapitalPrintHelper(unsigned int n) {
     charPrintHelper((char) (bfn + 48));
 }
 
+void		addressHexadecimalPrintHelper(unsigned int n, int i) {
+  unsigned int  bfn;
+
+  if (n >= 16 || i > 0) {
+    bfn = n % 16;
+    n /= 16;
+    addressHexadecimalPrintHelper(n, i - 1);
+  } else if (n > 0) {
+      bfn = n % 16;
+      n /= 16;
+  }
+  if (bfn > 9)
+    charPrintHelper((char) (bfn + 87));
+  else
+    charPrintHelper((char) (bfn + 48));
+}
+
 void	addressPrintHelper(unsigned int n) {
-  stringPrintHelper("0x");
-  hexadecimalPrintHelper(n);
+  int	i;
+
+  i = 8;
+  addressHexadecimalPrintHelper(n, i);
 }
 
 void	          octalPrintHelper(unsigned int n) {
