@@ -42,7 +42,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
 
 my_printf_static: $(OBJS)
-	$(SILENCER)$(AR) -r libmy_printf_phetsi_w.a -o $^
+	$(SILENCER)$(AR) -r libmy_printf_$(shell uname -m)-$(shell uname -s).a -o $^
 
 my_printf_dynamic: $(OBJS)
 	$(SILENCER)$(GCC) libmy_printf_phetsi_w.so -o $^ # TODO
