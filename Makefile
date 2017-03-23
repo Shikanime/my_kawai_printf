@@ -3,10 +3,12 @@ WARNINGS := -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align \
             -Wredundant-decls -Wnested-externs -Winline -Wno-long-long \
             -Wuninitialized -Wconversion -Wstrict-prototypes
 
-CFLAGS ?= -std=gnu99 -g $(WARNINGS)
+CFLAGS ?= -std=gnu99 -g $(WARNINGS) -fpic
 
 OBJDIR := obj
 SRCDIR := src
+
+CC := gcc
 
 NAME := libmy_printf_$(shell uname -m)-$(shell uname -s)
 
@@ -37,36 +39,25 @@ all: $(NAME)
 createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
-# Binary
 $(NAME): $(OBJS)
 	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
 
+my_printf_static: $(OBJS)
+	$(SILENCER)$(AR) -r $(NAME).a -o $^
+
+my_printf_dynamic: $(OBJS)
+	$(SILENCER)$(CC) -shared $(NAME).so -o $^
+
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
-
-# Static lib
-my_printf_static: $(OBJS)
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
-	$(SILENCER)$(AR) -r $@ -o $^
-
-# Dynamic lib
-my_printf_dynamic: $(OBJS)
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
-	$(SILENCER)$(GCC) -shared $@ -o $^
 
 clean:
 	$(SILENCER)$(RM) -r $(OBJDIR)
 
 fclean: clean
-	$(SILENCER)$(RM) -f *~ core main
-	$(SILENCER)$(RM) -r *.so
-	$(SILENCER)$(RM) -r *.a
+	$(SILENCER)$(RM) -f *~ $(NAME) $(NAME).so $(NAME).a
 
-re: fclean main
+re: fclean $(NAME)
 
 .PHONY: clean all
 
