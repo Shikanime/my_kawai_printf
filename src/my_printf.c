@@ -2,9 +2,9 @@
 
 /* Encapsulated protypes */
 
-void machina(const char * query, va_list * ap);
-void optionsMachina(const char * query, int * positionQry, int * optionsQry);
-void processMachina(const char * query, int * positionQry, int * optionsQry, va_list * ap);
+void machina        (const char * query, va_list * ap);
+void optionsMachina (const char * query, int * positionQry, int * optionsQry);
+void processMachina (const char * query, int * positionQry, int * optionsQry, va_list * ap);
 
 /* Usable functions */
 
@@ -18,7 +18,7 @@ void        my_printf(const char * query, ...) {
 
 /* Encapsulated functions */
 
-void            machina(const char * query, va_list * ap){
+void            machina(const char * query, va_list * ap) {
     int         positionQry;
     long int    sizeQry;
     int         optionsQry[OPTION_NUMBER];
@@ -37,22 +37,22 @@ void            machina(const char * query, va_list * ap){
     }
 }
 
-void    optionsMachina(const char * query, int * positionQry, int * optionsQry){
+void    optionsMachina(const char * query, int * positionQry, int * optionsQry) {
     int i;
 
     i = 0;
-    while (i < OPTION_NUMBER){
+    while (i < OPTION_NUMBER) {
         if ((*option[i])(query, *positionQry, optionsQry))
             ++positionQry;
         ++i;
     }
 }
 
-void    processMachina(const char * query, int * positionQry, int * optionsQry, va_list * ap){
+void    processMachina(const char * query, int * positionQry, int * optionsQry, va_list * ap) {
     int i;
 
     i = 0;
-    while (i < PROCESS_NUMBER){
+    while (i < PROCESS_NUMBER) {
         if ((*process[i])(query, *positionQry, optionsQry, ap))
             i = PROCESS_NUMBER;
         ++i;
