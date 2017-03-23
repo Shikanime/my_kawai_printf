@@ -5,6 +5,22 @@
 
 #define PROCESS_NUMBER 10
 
+enum {
+    flagsMod,
+    widthMod,
+    precisionMod,
+    lenghtMod,
+    typeMod
+};
+
+enum {
+    longIntLenght,
+    shortIntLenght,
+    longDoubleLenght
+};
+
+#include <stdarg.h>
+
 /* Usable functions */
 
 int (*process[PROCESS_NUMBER])  (const char * query, int n, int * opt, va_list * ap);
