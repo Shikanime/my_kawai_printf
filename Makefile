@@ -42,11 +42,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
 
 my_printf_static: $(OBJS)
-	$(SILENCER)$(AR) -r $@$(shell uname -m)-$(shell uname -s).a -o $^
-	$(SILENCER)$(RANLIB) $@$(shell uname -m)-$(shell uname -s).a
+	$(SILENCER)$(AR) -r $@ $(shell uname -m)-$(shell uname -s).a -o $^
+	$(SILENCER)$(RANLIB) $@ $(shell uname -m)-$(shell uname -s).a
 
 my_printf_dynamic: $(OBJS)
-	$(SILENCER)$(GCC) -shared -Wl,-soname,$@$(shell uname -m)-$(shell uname -s).so.1 $@$(shell uname -m)-$(shell uname -s).so -o $^
+	$(SILENCER)$(GCC) -shared -Wl,-soname,$@ $(shell uname -m)-$(shell uname -s).so.1 $@$(shell uname -m)-$(shell uname -s).so -o $^
 
 clean:
 	$(SILENCER)$(RM) -r $(OBJDIR)
