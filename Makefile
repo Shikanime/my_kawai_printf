@@ -8,6 +8,8 @@ CFLAGS ?= -std=gnu99 -g $(WARNINGS)
 OBJDIR := obj
 SRCDIR := src
 
+NAME := libmy_printf_$(shell uname -m)-$(shell uname -s)
+
 ifeq ($(VERBOSE), 1)
     SILENCER :=
 else
@@ -30,22 +32,31 @@ OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=o))
 CFLAGS += -MMD -MP
 DEPS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=d))
 
-all: main
+all: $(NAME)
 
 createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
-main: $(OBJS)
+# Binary
+$(NAME): $(OBJS)
 	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
 
+# Static lib
 my_printf_static: $(OBJS)
-	$(SILENCER)$(AR) -r libmy_printf_$(shell uname -m)-$(shell uname -s).a -o $^
+	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
+	$(SILENCER)$(AR) -r $@ -o $^
+
+# Dynamic lib
 my_printf_dynamic: $(OBJS)
-	$(SILENCER)$(GCC) -shared libmy_printf_$(shell uname -m)-$(shell uname -s).so -o $^ # TODO
+	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
+	$(SILENCER)$(GCC) -shared $@ -o $^
 
 clean:
 	$(SILENCER)$(RM) -r $(OBJDIR)
