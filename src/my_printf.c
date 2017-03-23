@@ -21,10 +21,16 @@ void            machina(const char * query, va_list * ap) {
 
     positionQry = 0;
     while (positionQry < sizeQry) {
-        if (query[positionQry] == '%' && query[positionQry + 1] != '\0') {
-          ++positionQry;
-          optionsMachina(query, &positionQry, optionsQry);
-          processMachina(query, &positionQry, optionsQry, ap);
+        if (query[positionQry] == '%') {
+	  if (query[positionQry + 1] != '\0') {
+            ++positionQry;
+            optionsMachina(query, &positionQry, optionsQry);
+            processMachina(query, &positionQry, optionsQry, ap);
+	  } else if (query[positionQry + 1] != '\n') {
+	    charPrintHelper('\n');
+	  } else if (query[positionQry + 1] != '\t') {
+  	    charPrintHelper('\t');
+	  }
         } else
             charPrintHelper(query[positionQry]);
         ++positionQry;
