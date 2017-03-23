@@ -1,7 +1,7 @@
 WARNINGS := -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-align \
-			-Wwrite-strings -Wmissing-prototypes -Wmissing-declarations \
-            -Wredundant-decls -Wnested-externs -Winline -Wno-long-long \
-            -Wuninitialized -Wconversion -Wstrict-prototypes
+		-Wwrite-strings -Wmissing-prototypes -Wmissing-declarations \
+		-Wredundant-decls -Wnested-externs -Winline -Wno-long-long \
+		-Wuninitialized -Wconversion -Wstrict-prototypes
 
 CFLAGS ?= -std=gnu99 -g $(WARNINGS) -fpic
 
@@ -22,11 +22,9 @@ ifeq ($(DEBUG_BUILD), 1)
     CFLAGS +=-DDEBUG_BUILD
 endif
 
-SRCF := rules.process.c \
-		rules.option.c \
-		helper.c \
-		my_printf.c \
-		test.c
+SRCF := rules.process.c rules.option.c \
+		helper.c my_printf.c \
+		main.c
 
 SRCS := $(patsubst %, $(SRCDIR)/%, $(SRCF))
 OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=o))
