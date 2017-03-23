@@ -1,4 +1,4 @@
-#include "headers/loader.h"
+#include "headers/rules.option.h"
 
 /* Usable functions */
 
@@ -6,7 +6,7 @@ int (*option[OPTION_NUMBER])(const char * query, int n, int * opt) = {
     longOption
 };
 
-/* Local functions */
+/* Internal functions */
 
 int longOption(const char * query, int n, int * opt) {
     if (query[n] == 'h' && query[n + 1] != '\0') {

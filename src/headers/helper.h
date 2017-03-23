@@ -1,6 +1,12 @@
 #ifndef MY_PRINTF_APP_HELPER_H
 #define MY_PRINTF_APP_HELPER_H
 
+/* Helpers */
+
+#include <unistd.h>
+
+/* Usage functions */
+
 void        charPrintHelper                 (char c);
 long int    stringLengthHelper              (const char * s);
 void        stringPrintHelper               (const char * s);

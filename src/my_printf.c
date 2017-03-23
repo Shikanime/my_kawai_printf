@@ -1,10 +1,4 @@
-#include "headers/loader.h"
-
-/* Encapsulated protypes */
-
-void machina        (const char * query, va_list * ap);
-void optionsMachina (const char * query, int * positionQry, int * optionsQry);
-void processMachina (const char * query, int * positionQry, int * optionsQry, va_list * ap);
+#include "headers/my_printf.h"
 
 /* Usable functions */
 
@@ -16,7 +10,7 @@ void        my_printf(const char * query, ...) {
     va_end(ap);
 }
 
-/* Encapsulated functions */
+/* Internal functions */
 
 void            machina(const char * query, va_list * ap) {
     int         positionQry;

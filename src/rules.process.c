@@ -1,4 +1,4 @@
-#include "headers/loader.h"
+#include "headers/rules.process.h"
 
 /* Usable functions */
 
@@ -15,7 +15,7 @@ int (*process[PROCESS_NUMBER])(const char * query, int n, int * opt, va_list * a
    doublePrecisionProcess
 };
 
-/* Rule list functions */
+/* Internal functions */
 
 int escapeProcess(const char * query, int n, int * opt, va_list * ap) {
    (void) ap;
