@@ -16,5 +16,5 @@ int main(int ac, char * av[]) {
 	my_printf("Negative uppercase hexadecimal - %X\n", -42);
 	my_printf("Mixed - %d%%\n", -42);
 	
-	return 1;
+	return 0;
 }
