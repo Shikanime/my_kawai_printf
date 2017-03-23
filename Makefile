@@ -9,7 +9,7 @@ OBJDIR := obj
 SRCDIR := src
 
 ifeq ($(VERBOSE), 1)
-    SILENCER := 
+    SILENCER :=
 else
     SILENCER := @
 endif
@@ -35,8 +35,8 @@ all: main
 createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
-main: $(OBJS) 
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^ 
+main: $(OBJS)
+	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
@@ -48,13 +48,12 @@ my_printf_dynamic: $(OBJS)
 	$(SILENCER)$(GCC) libmy_printf_phetsi_w.so -o $^ # TODO
 
 clean:
-	$(SILENCER)$(RM) -f *~ core main
 	$(SILENCER)$(RM) -r $(OBJDIR)
 
 fclean: clean
-	$(SILENCER)$(RM) -r main
+	$(SILENCER)$(RM) -f *~ core main
 	$(SILENCER)$(RM) -r *.so
-	$(SILENCER)$(RM) a.out
+	$(SILENCER)$(RM) -r *.a
 
 re: fclean main
 
