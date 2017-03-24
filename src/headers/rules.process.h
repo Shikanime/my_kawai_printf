@@ -1,3 +1,13 @@
+/*
+   rules.process.h for my_printf in /home/asuramaru/Project/print/phetsi_w/src
+
+   Made by PHETSINORATH William
+   Login   <phetsi_w@etna-alternance.net>
+
+   Started on  Fri Mar 24 14:39:20 2017 PHETSINORATH William
+   Last update Fri Mar 24 14:39:28 2017 PHETSINORATH William
+*/
+
 #ifndef MY_PRINTF_RULLES_PROCESS_H
 #define MY_PRINTF_RULLES_PROCESS_H
 

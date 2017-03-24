@@ -1,3 +1,13 @@
+/*
+   my_printf.h for my_printf in /home/asuramaru/Project/print/phetsi_w/src
+
+   Made by PHETSINORATH William
+   Login   <phetsi_w@etna-alternance.net>
+
+   Started on  Fri Mar 24 14:38:44 2017 PHETSINORATH William
+   Last update Fri Mar 24 14:38:50 2017 PHETSINORATH William
+*/
+
 #ifndef MY_PRINTF_APP_MY_PRINTF_H
 #define MY_PRINTF_APP_MY_PRINTF_H
 

@@ -1,3 +1,13 @@
+/*
+   rules.process.c for my_printf in /home/asuramaru/Project/print/phetsi_w/src
+
+   Made by PHETSINORATH William
+   Login   <phetsi_w@etna-alternance.net>
+
+   Started on  Fri Mar 24 14:37:53 2017 PHETSINORATH William
+   Last update Fri Mar 24 14:38:03 2017 PHETSINORATH William
+*/
+
 #include "headers/rules.process.h"
 
 /* Usable functions */
@@ -72,10 +82,10 @@ int hexadecimalProcess(const char * query, int n, int * opt, va_list * ap) {
    (void) opt;
    if (query[n] == 'x') {
       hexadecimalPrintHelper(va_arg(*ap, unsigned int));
-      return 1; 
+      return 1;
    } else if (query[n] == 'X') {
       hexadecimalCapitalPrintHelper(va_arg(*ap, unsigned int));
-      return 1; 
+      return 1;
    }
    return 0;
 }
@@ -84,7 +94,7 @@ int octalProcess(const char * query, int n, int * opt, va_list * ap) {
    (void) opt;
    if (query[n] == 'o') {
       octalPrintHelper(va_arg(*ap, unsigned int));
-    return 1; 
+    return 1;
   }
   return 0;
 }
@@ -93,7 +103,7 @@ int unsignedIntegerProcess(const char * query, int n, int * opt, va_list * ap) {
    (void) opt;
    if (query[n] == 'u') {
       unsignedIntegerPrintHelper(va_arg(*ap, unsigned int));
-      return 1; 
+      return 1;
    }
    return 0;
 }

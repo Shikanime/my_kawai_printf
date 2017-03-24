@@ -10,7 +10,12 @@ SRCDIR := src
 
 CC := gcc
 
+EXEC := my_printf
+LIBS := my_printf_static
+LIBD := my_printf_dynamic
+
 NAME := libmy_printf_$(shell uname -m)-$(shell uname -s)
+
 
 ifeq ($(VERBOSE), 1)
     SILENCER :=
@@ -32,19 +37,19 @@ OBJS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=o))
 CFLAGS += -MMD -MP
 DEPS := $(patsubst %, $(OBJDIR)/%, $(SRCF:c=d))
 
-all: $(NAME)
+all: $(EXEC)
 
 createdir:
 	$(SILENCER)mkdir -p $(OBJDIR)
 
-$(NAME): $(OBJS)
-	$(SILENCER)$(CC) $(CFLAGS) -o $@ $^
+$(EXEC): $(OBJS)
+	$(SILENCER)$(CC) $(CFLAGS) -o $(NAME) $^
 
-my_printf_static: $(OBJS)
+$(LIBS): $(OBJS)
 	$(SILENCER)$(AR) -r $(NAME).a -o $^
 
-my_printf_dynamic: $(OBJS)
-	$(SILENCER)$(CC) -shared $(NAME).so -o $^
+$(LIBD): $(OBJS)
+	$(SILENCER)$(CC) -shared -o $(NAME).so  $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | createdir
 	$(SILENCER)$(CC) $(CFLAGS) -c -o $@ $<
@@ -55,7 +60,7 @@ clean:
 fclean: clean
 	$(SILENCER)$(RM) -f *~ $(NAME) $(NAME).so $(NAME).a
 
-re: fclean $(NAME)
+re: fclean $(LIBS) $(LIBD)
 
 .PHONY: clean all
 
