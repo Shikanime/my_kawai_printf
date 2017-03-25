@@ -8,8 +8,8 @@
    Last update Fri Mar 24 14:38:50 2017 PHETSINORATH William
 */
 
-#ifndef MY_PRINTF_APP_MY_PRINTF_H
-#define MY_PRINTF_APP_MY_PRINTF_H
+#ifndef MY_PRINTF_MY_PRINTF_H
+#define MY_PRINTF_MY_PRINTF_H
 
 /* Helpers */
 
