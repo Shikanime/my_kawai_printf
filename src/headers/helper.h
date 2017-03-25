@@ -8,8 +8,8 @@
    Last update Fri Mar 24 14:38:27 2017 PHETSINORATH William
 */
 
-#ifndef MY_PRINTF_APP_HELPER_H
-#define MY_PRINTF_APP_HELPER_H
+#ifndef MY_PRINTF_HELPER_H
+#define MY_PRINTF_HELPER_H
 
 /* Helpers */
 
@@ -28,4 +28,4 @@ void        hexadecimalPrintHelper          (unsigned int n);
 void        hexadecimalCapitalPrintHelper   (unsigned int n);
 void	    octalPrintHelper                (unsigned int n);
 
-#endif //MY_PRINTF_APP_HELPER
+#endif //MY_PRINTF_HELPER
