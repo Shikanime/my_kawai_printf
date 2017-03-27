@@ -8,8 +8,8 @@
    Last update Fri Mar 24 14:38:50 2017 PHETSINORATH William
 */
 
-#ifndef MY_PRINTF_MY_PRINTF_H
-#define MY_PRINTF_MY_PRINTF_H
+#ifndef MY_PRINTF_MAIN_H
+#define MY_PRINTF_MAIN_H
 
 /* Helpers */
 
@@ -38,4 +38,4 @@ int         (*option[OPTION_NUMBER])    (const char * query, int n, int * opt);
 // Rules process
 int         (*process[PROCESS_NUMBER])  (const char * query, int n, int * opt, va_list * ap);
 
-#endif //MY_PRINTF_MY_PRINTF
+#endif //MY_PRINTF_MAIN_H
