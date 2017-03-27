@@ -8,14 +8,11 @@ CFLAGS ?= -std=gnu99 -g $(WARNINGS) -fpic
 OBJDIR := obj
 SRCDIR := src
 
-CC := gcc
-
-EXEC := my_printf
-LIBS := my_printf_static
-LIBD := my_printf_dynamic
-
 NAME := libmy_printf_$(shell uname -m)-$(shell uname -s)
 
+EXEC := $(NAME)
+LIBS := $(NAME)_static
+LIBD := $(NAME)_dynamic
 
 ifeq ($(VERBOSE), 1)
     SILENCER :=
