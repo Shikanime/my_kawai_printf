@@ -98,7 +98,7 @@ void            hexadecimalCapitalPrintHelper(unsigned int n) {
     charPrintHelper((char) (bfn + 48));
 }
 
-/* アンジェラバルザックの楽園追放 */
+/* 楽園追放のアンジェラバルザック */
 
 void		addressHexadecimalPrintHelper(unsigned int n, int i) {
   unsigned int  bfn;
