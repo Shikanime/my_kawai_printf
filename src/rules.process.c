@@ -37,7 +37,7 @@ int escapeProcess(const char * query, int n, int * opt, va_list * ap) {
    return 0;
 }
 
-int integerProcess(const char * query, int n, int * opt, va_list * ap){
+int integerProcess(const char * query, int n, int * opt, va_list * ap) {
    if (query[n] == 'd' || query[n] == 'i') {
       if (opt[lenghtMod] == longIntLenght){
          integerPrintHelper(va_arg(*ap, int)); // TO DO
@@ -124,7 +124,7 @@ int floatPointProcess(const char * query, int n, int * opt, va_list * ap) {
    return 0;
 }
 
-int doublePrecisionProcess(const char * query, int n, int * opt, va_list * ap){
+int doublePrecisionProcess(const char * query, int n, int * opt, va_list * ap) {
    (void) query;
    (void) opt;
    if (query[n] == 'e') {
